@@ -7,7 +7,6 @@
 <title>فرصتك | وظائف العالم العربي</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -19,27 +18,30 @@
     --primary-dark:#1d4ed8;
     --secondary:#14b8a6;
     --bg:#f7f9fc;
-    --card:#ffffff;
+    --card:#fff;
     --text:#172033;
     --muted:#718096;
     --border:#e8edf5;
     --soft:#eef5ff;
     --success:#10b981;
+    --danger:#ef4444;
 }
 
 body{
-    font-family:
-    Tahoma,
-    Arial,
-    sans-serif;
-
+    font-family:Tahoma,Arial,sans-serif;
     background:var(--bg);
     color:var(--text);
     line-height:1.6;
 }
 
-button{
+button,
+input,
+select,
+textarea{
     font-family:inherit;
+}
+
+button{
     cursor:pointer;
 }
 
@@ -48,12 +50,10 @@ button{
     margin:auto;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
-    background:rgba(255,255,255,.94);
+    background:rgba(255,255,255,.95);
     border-bottom:1px solid var(--border);
     position:sticky;
     top:0;
@@ -82,12 +82,8 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
-    color:white;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:#fff;
     font-size:21px;
 }
 
@@ -109,23 +105,13 @@ header{
     font-weight:900;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     padding:58px 0 48px;
     background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(37,99,235,.10),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 10% 30%,
-            rgba(20,184,166,.08),
-            transparent 30%
-        ),
+        radial-gradient(circle at 90% 10%,rgba(37,99,235,.10),transparent 28%),
+        radial-gradient(circle at 10% 30%,rgba(20,184,166,.08),transparent 30%),
         #fff;
 }
 
@@ -167,9 +153,7 @@ header{
     max-width:620px;
 }
 
-/* =========================
-   STATS
-========================= */
+/* STATS */
 
 .stats{
     margin-top:22px;
@@ -182,7 +166,7 @@ header{
 }
 
 .stat{
-    background:white;
+    background:#fff;
     border:1px solid var(--border);
     border-radius:17px;
     padding:17px;
@@ -201,9 +185,7 @@ header{
     font-size:11px;
 }
 
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 main{
     padding:48px 0 65px;
@@ -225,19 +207,16 @@ main{
     margin-top:4px;
 }
 
-/* =========================
-   COUNTRIES
-========================= */
+/* COUNTRIES */
 
 .countries{
     display:grid;
-    grid-template-columns:
-        repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
     gap:13px;
 }
 
 .country{
-    background:white;
+    background:#fff;
     border:1px solid var(--border);
     border-radius:18px;
     padding:18px;
@@ -261,8 +240,7 @@ main{
 .country:hover{
     transform:translateY(-4px);
     border-color:#cfe0ff;
-    box-shadow:
-        0 15px 35px rgba(31,52,88,.08);
+    box-shadow:0 15px 35px rgba(31,52,88,.08);
 }
 
 .country.active{
@@ -307,9 +285,7 @@ main{
     font-weight:900;
 }
 
-/* =========================
-   JOB AREA
-========================= */
+/* JOBS */
 
 .jobs-section{
     margin-top:55px;
@@ -321,7 +297,7 @@ main{
 }
 
 .jobs-header{
-    background:white;
+    background:#fff;
     border:1px solid var(--border);
     border-radius:18px;
     padding:17px 19px;
@@ -361,19 +337,14 @@ main{
     font-weight:900;
 }
 
-/* =========================
-   JOB GRID
-========================= */
-
 .jobs{
     display:grid;
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
     gap:14px;
 }
 
 .job{
-    background:white;
+    background:#fff;
     border:1px solid var(--border);
     border-radius:18px;
     padding:16px;
@@ -384,8 +355,7 @@ main{
 
 .job:hover{
     transform:translateY(-3px);
-    box-shadow:
-        0 13px 30px rgba(31,52,88,.08);
+    box-shadow:0 13px 30px rgba(31,52,88,.08);
 }
 
 .job-image{
@@ -464,7 +434,7 @@ main{
 .apply{
     border:0;
     background:var(--primary);
-    color:white;
+    color:#fff;
     padding:8px 13px;
     border-radius:8px;
     font-size:10px;
@@ -474,10 +444,6 @@ main{
 .apply:hover{
     background:var(--primary-dark);
 }
-
-/* =========================
-   NOTICE
-========================= */
 
 .notice{
     margin-top:20px;
@@ -489,14 +455,12 @@ main{
     font-size:10px;
 }
 
-/* =========================
-   MODAL
-========================= */
+/* MODALS */
 
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(15,23,42,.55);
+    background:rgba(15,23,42,.60);
     display:none;
     align-items:center;
     justify-content:center;
@@ -509,13 +473,25 @@ main{
 }
 
 .modal-box{
-    width:min(500px,100%);
-    max-height:90vh;
+    width:min(520px,100%);
+    max-height:92vh;
     overflow:auto;
-    background:white;
+    background:#fff;
     border-radius:21px;
     padding:24px;
     position:relative;
+    animation:modalIn .2s ease;
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.98);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
 }
 
 .close{
@@ -577,7 +553,7 @@ main{
     width:100%;
     border:0;
     background:var(--primary);
-    color:white;
+    color:#fff;
     padding:13px;
     border-radius:11px;
     font-weight:950;
@@ -590,20 +566,185 @@ main{
     margin-top:8px;
 }
 
-/* =========================
-   CTA
-========================= */
+/* FORM */
+
+.form-title{
+    font-size:22px !important;
+    padding-left:35px;
+}
+
+.form-subtitle{
+    color:var(--muted);
+    font-size:11px;
+    margin:5px 0 18px;
+}
+
+.selected-job{
+    background:#f5f9ff;
+    border:1px solid #dbeafe;
+    border-radius:12px;
+    padding:12px;
+    margin-bottom:18px;
+}
+
+.selected-job strong{
+    display:block;
+    color:var(--primary);
+    font-size:13px;
+}
+
+.selected-job span{
+    color:var(--muted);
+    font-size:10px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    font-size:11px;
+    font-weight:900;
+    color:#374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    border:1px solid #dfe5ee;
+    background:#fff;
+    border-radius:10px;
+    padding:11px 12px;
+    outline:none;
+    font-size:11px;
+    color:var(--text);
+    transition:.2s;
+}
+
+.form-group textarea{
+    min-height:80px;
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(37,99,235,.08);
+}
+
+.form-error{
+    display:none;
+    color:var(--danger);
+    background:#fef2f2;
+    border:1px solid #fee2e2;
+    padding:9px 11px;
+    border-radius:9px;
+    font-size:10px;
+    margin-bottom:12px;
+}
+
+.form-error.show{
+    display:block;
+}
+
+.continue-btn{
+    width:100%;
+    border:0;
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    color:#fff;
+    padding:13px;
+    border-radius:11px;
+    font-weight:950;
+    margin-top:17px;
+}
+
+.form-note{
+    color:#9aa4b2;
+    font-size:9px;
+    text-align:center;
+    margin-top:8px;
+}
+
+/* SUCCESS */
+
+.success-box{
+    text-align:center;
+    padding:18px 5px 5px;
+}
+
+.success-icon{
+    width:75px;
+    height:75px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    background:#ecfdf5;
+    color:var(--success);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+.success-box h2{
+    padding:0;
+    font-size:22px;
+}
+
+.success-box p{
+    color:var(--muted);
+    font-size:12px;
+    margin:10px 0 18px;
+}
+
+.success-job{
+    background:#f6f8fb;
+    border-radius:12px;
+    padding:12px;
+    margin-bottom:16px;
+    font-size:11px;
+}
+
+.success-job strong{
+    color:var(--primary);
+}
+
+.final-btn{
+    width:100%;
+    border:0;
+    background:linear-gradient(135deg,var(--success),#059669);
+    color:#fff;
+    padding:14px;
+    border-radius:11px;
+    font-weight:950;
+    font-size:12px;
+}
+
+.final-note{
+    color:#9aa4b2;
+    font-size:9px;
+    margin-top:9px;
+}
+
+/* CTA */
 
 .cta{
     margin-top:55px;
-    background:
-        linear-gradient(
-            135deg,
-            #1d4ed8,
-            #2563eb,
-            #0f9f8f
-        );
-    color:white;
+    background:linear-gradient(135deg,#1d4ed8,#2563eb,#0f9f8f);
+    color:#fff;
     border-radius:23px;
     padding:40px 20px;
     text-align:center;
@@ -622,16 +763,14 @@ main{
 
 .cta button{
     border:0;
-    background:white;
+    background:#fff;
     color:var(--primary);
     padding:12px 22px;
     border-radius:10px;
     font-weight:950;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     background:#111827;
@@ -642,45 +781,37 @@ footer{
 }
 
 footer strong{
-    color:white;
+    color:#fff;
     font-size:14px;
 }
 
-/* =========================
-   TOAST
-========================= */
+/* TOAST */
 
 .toast{
     position:fixed;
     right:18px;
     bottom:18px;
     background:#172033;
-    color:white;
+    color:#fff;
     padding:12px 15px;
     border-radius:11px;
     font-size:11px;
     display:none;
     z-index:9000;
+    max-width:320px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:900px){
-
     .countries{
-        grid-template-columns:
-            repeat(3,1fr);
+        grid-template-columns:repeat(3,1fr);
     }
-
 }
 
 @media(max-width:700px){
-
     .countries{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .jobs{
@@ -690,11 +821,9 @@ footer strong{
     .stats-grid{
         grid-template-columns:1fr 1fr 1fr;
     }
-
 }
 
 @media(max-width:500px){
-
     .hero{
         padding:40px 0 35px;
     }
@@ -742,337 +871,488 @@ footer strong{
         grid-template-columns:1fr;
     }
 
-    .modal-grid{
+    .modal-grid,
+    .form-grid{
         grid-template-columns:1fr;
     }
 
+    .form-group.full{
+        grid-column:auto;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
 <div class="container nav">
 
-<div class="logo">
+    <div class="logo">
+        <div class="logo-icon">💼</div>
+        <div class="logo-text">
+            فرصتك <span>العربية</span>
+        </div>
+    </div>
 
-<div class="logo-icon">
-💼
-</div>
-
-<div class="logo-text">
-فرصتك <span>العربية</span>
-</div>
-
-</div>
-
-<button
-class="nav-btn"
-onclick="scrollToCountries()">
-الدول
-</button>
+    <button class="nav-btn" onclick="scrollToCountries()">
+        الدول
+    </button>
 
 </div>
-
 </header>
 
 
 <section class="hero">
-
 <div class="container">
-
 <div class="hero-content">
 
-<div class="hero-badge">
-✨ فرص عمل متاحة
-</div>
+    <div class="hero-badge">
+        ✨ فرص عمل متاحة
+    </div>
 
-<h1>
-ابحث عن <span>فرصتك</span>
-في بلدك
-</h1>
+    <h1>
+        ابحث عن <span>فرصتك</span>
+        في بلدك
+    </h1>
 
-<p>
-اختر الدولة التي تبحث فيها عن العمل
-واستعرض الفرص المتاحة مباشرة.
-</p>
-
-</div>
+    <p>
+        اختر الدولة التي تبحث فيها عن العمل
+        واستعرض الفرص المتاحة مباشرة.
+    </p>
 
 </div>
-
+</div>
 </section>
 
 
 <section class="stats">
-
 <div class="container stats-grid">
 
-<div class="stat">
+    <div class="stat">
+        <strong>11</strong>
+        <small>دولة عربية</small>
+    </div>
 
-<strong>11</strong>
+    <div class="stat">
+        <strong>1100</strong>
+        <small>فرصة عمل</small>
+    </div>
 
-<small>
-دولة عربية
-</small>
-
-</div>
-
-<div class="stat">
-
-<strong>1100+</strong>
-
-<small>
-فرصة عمل
-</small>
+    <div class="stat">
+        <strong>24/7</strong>
+        <small>تصفح الوظائف</small>
+    </div>
 
 </div>
-
-<div class="stat">
-
-<strong>24/7</strong>
-
-<small>
-تصفح الوظائف
-</small>
-
-</div>
-
-</div>
-
 </section>
 
 
 <main>
-
 <div class="container">
 
+    <div class="section-head" id="countriesSection">
+        <h2>🌍 اختر الدولة</h2>
+        <p>اضغط على الدولة لعرض فرص العمل</p>
+    </div>
 
-<div
-class="section-head"
-id="countriesSection">
-
-<h2>
-🌍 اختر الدولة
-</h2>
-
-<p>
-اضغط على الدولة لعرض فرص العمل
-</p>
-
-</div>
+    <div class="countries" id="countries"></div>
 
 
-<div
-class="countries"
-id="countries">
+    <section class="jobs-section" id="jobsSection">
 
-</div>
+        <div class="jobs-header">
+
+            <div class="jobs-title">
+
+                <div class="jobs-flag" id="jobsFlag">
+                    🌍
+                </div>
+
+                <div>
+                    <h2 id="jobsCountry">الوظائف</h2>
+                    <p id="jobsSubtitle">فرص عمل متاحة</p>
+                </div>
+
+            </div>
+
+            <button class="back-btn" onclick="backToCountries()">
+                ← جميع الدول
+            </button>
+
+        </div>
+
+        <div class="jobs" id="jobs"></div>
+
+        <div class="notice">
+            ℹ️ قبل التقديم، تأكد دائمًا من تفاصيل الوظيفة
+            والجهة الناشرة والشروط المطلوبة.
+        </div>
+
+    </section>
 
 
-<section
-class="jobs-section"
-id="jobsSection">
+    <section class="cta">
 
-<div class="jobs-header">
+        <h2>🚀 فرصتك قد تكون هنا</h2>
 
-<div class="jobs-title">
+        <p>
+            استعرض الوظائف المتاحة في بلدك واختر
+            الفرصة التي تناسبك.
+        </p>
 
-<div
-class="jobs-flag"
-id="jobsFlag">
-🌍
-</div>
+        <button onclick="scrollToCountries()">
+            استعرض الدول
+        </button>
 
-<div>
-
-<h2 id="jobsCountry">
-الوظائف
-</h2>
-
-<p id="jobsSubtitle">
-فرص عمل متاحة
-</p>
-
-</div>
-
-</div>
-
-<button
-class="back-btn"
-onclick="backToCountries()">
-
-← جميع الدول
-
-</button>
+    </section>
 
 </div>
-
-
-<div
-class="jobs"
-id="jobs">
-</div>
-
-
-<div class="notice">
-
-ℹ️ قبل التقديم، تأكد دائمًا من تفاصيل الوظيفة
-والجهة الناشرة والشروط المطلوبة.
-
-</div>
-
-</section>
-
-
-<section class="cta">
-
-<h2>
-🚀 فرصتك قد تكون هنا
-</h2>
-
-<p>
-استعرض الوظائف المتاحة في بلدك واختر الفرصة
-التي تناسبك.
-</p>
-
-<button onclick="scrollToCountries()">
-استعرض الدول
-</button>
-
-</section>
-
-</div>
-
 </main>
 
 
 <footer>
 
-<strong>
-💼 فرصتك العربية
-</strong>
+    <strong>💼 فرصتك العربية</strong>
 
-<br><br>
+    <br><br>
 
-منصة مستقلة لاستعراض فرص العمل.
+    منصة مستقلة لاستعراض فرص العمل.
 
-<br><br>
+    <br><br>
 
-© 2026 جميع الحقوق محفوظة
+    © 2026 جميع الحقوق محفوظة
 
 </footer>
 
 
-<!-- =========================
-     MODAL
-========================= -->
+<!-- =====================================================
+     نافذة تفاصيل الوظيفة
+===================================================== -->
 
-<div
-class="modal"
-id="modal">
+<div class="modal" id="modal">
 
 <div class="modal-box">
 
-<button
-class="close"
-onclick="closeModal()">
-×
-</button>
+    <button class="close" onclick="closeModal()">×</button>
 
-<div
-class="modal-image"
-id="modalImage">
-💼
-</div>
+    <div class="modal-image" id="modalImage">
+        💼
+    </div>
 
-<h2 id="modalTitle">
-الوظيفة
-</h2>
+    <h2 id="modalTitle">
+        الوظيفة
+    </h2>
 
-<div
-class="modal-company"
-id="modalCompany">
-</div>
+    <div class="modal-company" id="modalCompany"></div>
 
-<div class="modal-grid">
+    <div class="modal-grid">
 
-<div
-class="modal-item"
-id="modalCountry">
-</div>
+        <div class="modal-item" id="modalCountry"></div>
 
-<div
-class="modal-item"
-id="modalCity">
-</div>
+        <div class="modal-item" id="modalCity"></div>
 
-<div
-class="modal-item"
-id="modalType">
-</div>
+        <div class="modal-item" id="modalType"></div>
 
-<div
-class="modal-item"
-id="modalSalary">
-</div>
+        <div class="modal-item" id="modalSalary"></div>
+
+    </div>
+
+    <div class="modal-description" id="modalDescription"></div>
+
+    <button class="modal-apply" onclick="applyForJob()">
+        تقدم للوظيفة
+    </button>
+
+    <div class="modal-note">
+        ستظهر استمارة التقديم قبل الانتقال للخطوة التالية.
+    </div>
 
 </div>
-
-<div
-class="modal-description"
-id="modalDescription">
-</div>
-
-<button
-class="modal-apply"
-onclick="applyForJob()">
-
-تقدم للوظيفة
-
-</button>
-
-<div class="modal-note">
-
-سيتم الانتقال إلى صفحة التقديم الخارجية.
-
-</div>
-
-</div>
-
 </div>
 
 
-<div
-class="toast"
-id="toast">
+<!-- =====================================================
+     نموذج التقديم
+===================================================== -->
+
+<div class="modal" id="applicationModal">
+
+<div class="modal-box">
+
+    <button class="close" onclick="closeApplicationModal()">×</button>
+
+    <h2 class="form-title">
+        📝 طلب التقديم
+    </h2>
+
+    <p class="form-subtitle">
+        أدخل معلوماتك الأساسية لإكمال إجراءات التقديم.
+    </p>
+
+    <div class="selected-job">
+
+        <strong id="formJobTitle">
+            الوظيفة
+        </strong>
+
+        <span id="formJobDetails">
+            تفاصيل الوظيفة
+        </span>
+
+    </div>
+
+    <div class="form-error" id="formError">
+        يرجى ملء جميع الحقول المطلوبة.
+    </div>
+
+    <form id="applicationForm" onsubmit="submitApplication(event)">
+
+        <div class="form-grid">
+
+            <div class="form-group full">
+                <label for="fullName">
+                    الاسم الكامل *
+                </label>
+
+                <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    placeholder="أدخل اسمك الكامل"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="phone">
+                    رقم الهاتف *
+                </label>
+
+                <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="مثال: 06XXXXXXXX"
+                    autocomplete="tel"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="email">
+                    البريد الإلكتروني *
+                </label>
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="age">
+                    العمر *
+                </label>
+
+                <input
+                    id="age"
+                    name="age"
+                    type="number"
+                    min="18"
+                    max="70"
+                    placeholder="العمر"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="applicationCountry">
+                    الدولة *
+                </label>
+
+                <select
+                    id="applicationCountry"
+                    name="country"
+                    required
+                >
+                    <option value="">
+                        اختر الدولة
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="applicationCity">
+                    المدينة *
+                </label>
+
+                <input
+                    id="applicationCity"
+                    name="city"
+                    type="text"
+                    placeholder="المدينة"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group full">
+                <label for="experience">
+                    الخبرة المهنية *
+                </label>
+
+                <select
+                    id="experience"
+                    name="experience"
+                    required
+                >
+                    <option value="">
+                        اختر مستوى الخبرة
+                    </option>
+
+                    <option value="بدون خبرة">
+                        بدون خبرة
+                    </option>
+
+                    <option value="أقل من سنة">
+                        أقل من سنة
+                    </option>
+
+                    <option value="1 - 2 سنوات">
+                        1 - 2 سنوات
+                    </option>
+
+                    <option value="3 - 5 سنوات">
+                        3 - 5 سنوات
+                    </option>
+
+                    <option value="أكثر من 5 سنوات">
+                        أكثر من 5 سنوات
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="form-group full">
+                <label for="applicationJob">
+                    الوظيفة التي تتقدم إليها *
+                </label>
+
+                <input
+                    id="applicationJob"
+                    name="job"
+                    type="text"
+                    readonly
+                    required
+                >
+            </div>
+
+
+        </div>
+
+        <button
+            class="continue-btn"
+            type="submit">
+
+            متابعة التقديم →
+
+        </button>
+
+        <div class="form-note">
+            يرجى التأكد من صحة المعلومات قبل المتابعة.
+        </div>
+
+    </form>
+
 </div>
+</div>
+
+
+<!-- =====================================================
+     نافذة نجاح التقديم
+===================================================== -->
+
+<div class="modal" id="successModal">
+
+<div class="modal-box">
+
+    <button class="close" onclick="closeSuccessModal()">×</button>
+
+    <div class="success-box">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>
+            تم حفظ معلوماتك بنجاح
+        </h2>
+
+        <p>
+            بقيت خطوة أخيرة لإتمام إجراءات التقديم
+            على الوظيفة.
+        </p>
+
+        <div class="success-job">
+
+            الوظيفة:
+            <strong id="successJobTitle">
+                الوظيفة
+            </strong>
+
+            <br>
+
+            <span id="successJobCompany">
+                الشركة
+            </span>
+
+        </div>
+
+        <button
+            class="final-btn"
+            onclick="completeApplication()">
+
+            إتمام التقديم
+
+        </button>
+
+        <div class="final-note">
+            سيتم نقلك إلى الصفحة الخارجية لإكمال الخطوة الأخيرة.
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+<div class="toast" id="toast"></div>
 
 
 <script>
 
 /* =====================================================
-   إعداد OGADS
+   رابط الصفحة الخارجية
 =====================================================
 
-   ضع بيانات العرض الخاصة بك هنا.
+   ضع الرابط الذي تريد الانتقال إليه هنا.
 
    مثال:
 
-   const OGADS_OFFER_ID = "123456";
-
-   وإذا كان نظامك يعطيك رابط عرض مباشر:
-   
-   const OGADS_LINK = "ضع-رابط-العرض-هنا";
-
-   لا تضع بيانات الحساب السرية هنا.
+   const OGADS_LINK = "https://example.com";
 
 ===================================================== */
-
-const OGADS_OFFER_ID = "";
 
 const OGADS_LINK = "";
 
@@ -1216,131 +1496,32 @@ const countries = {
 
 const jobTemplates = [
 
-    {
-        title:"عامل مستودع",
-        icon:"📦",
-        category:"مستودعات"
-    },
-
-    {
-        title:"عامل إنتاج",
-        icon:"🏭",
-        category:"إنتاج"
-    },
-
-    {
-        title:"عامل تعبئة وتغليف",
-        icon:"📦",
-        category:"مصانع"
-    },
-
-    {
-        title:"عامل تحميل وتفريغ",
-        icon:"🚚",
-        category:"نقل"
-    },
-
-    {
-        title:"سائق توصيل",
-        icon:"🚗",
-        category:"توصيل"
-    },
-
-    {
-        title:"مساعد سائق",
-        icon:"🚛",
-        category:"نقل"
-    },
-
-    {
-        title:"عامل نظافة",
-        icon:"🧹",
-        category:"نظافة"
-    },
-
-    {
-        title:"حارس أمن",
-        icon:"🛡️",
-        category:"أمن"
-    },
-
-    {
-        title:"موظف استقبال",
-        icon:"🛎️",
-        category:"خدمات"
-    },
-
-    {
-        title:"عامل مطعم",
-        icon:"🍽️",
-        category:"مطاعم"
-    },
-
-    {
-        title:"مساعد مطبخ",
-        icon:"👨‍🍳",
-        category:"مطاعم"
-    },
-
-    {
-        title:"نادل",
-        icon:"🍴",
-        category:"مطاعم"
-    },
-
-    {
-        title:"عامل فندق",
-        icon:"🏨",
-        category:"فنادق"
-    },
-
-    {
-        title:"عامل مغسلة",
-        icon:"🧺",
-        category:"خدمات"
-    },
-
-    {
-        title:"بائع",
-        icon:"🛍️",
-        category:"مبيعات"
-    },
-
-    {
-        title:"مساعد مبيعات",
-        icon:"🛒",
-        category:"مبيعات"
-    },
-
-    {
-        title:"خدمة عملاء",
-        icon:"🎧",
-        category:"خدمة العملاء"
-    },
-
-    {
-        title:"موظف خدمة",
-        icon:"🙋",
-        category:"خدمات"
-    },
-
-    {
-        title:"عامل صيانة",
-        icon:"🔧",
-        category:"صيانة"
-    },
-
-    {
-        title:"مساعد فني",
-        icon:"🛠️",
-        category:"صيانة"
-    }
+    ["عامل مستودع","📦","مستودعات"],
+    ["عامل إنتاج","🏭","إنتاج"],
+    ["عامل تعبئة وتغليف","📦","مصانع"],
+    ["عامل تحميل وتفريغ","🚚","نقل"],
+    ["سائق توصيل","🚗","توصيل"],
+    ["مساعد سائق","🚛","نقل"],
+    ["عامل نظافة","🧹","نظافة"],
+    ["حارس أمن","🛡️","أمن"],
+    ["موظف استقبال","🛎️","خدمات"],
+    ["عامل مطعم","🍽️","مطاعم"],
+    ["مساعد مطبخ","👨‍🍳","مطاعم"],
+    ["نادل","🍴","مطاعم"],
+    ["عامل فندق","🏨","فنادق"],
+    ["عامل مغسلة","🧺","خدمات"],
+    ["بائع","🛍️","مبيعات"],
+    ["مساعد مبيعات","🛒","مبيعات"],
+    ["خدمة عملاء","🎧","خدمة العملاء"],
+    ["موظف خدمة","🙋","خدمات"],
+    ["عامل صيانة","🔧","صيانة"],
+    ["مساعد فني","🛠️","صيانة"]
 
 ];
 
 
 /* =====================================================
-   أسماء شركات/جهات عامة
+   الشركات العامة
 ===================================================== */
 
 const companyNames = [
@@ -1360,68 +1541,142 @@ const companyNames = [
 
 
 /* =====================================================
-   إنشاء 100 وظيفة لكل دولة
+   رواتب تقريبية حسب الدولة
+===================================================== */
+
+const salaryRanges = {
+
+    saudi:[
+        "2,500 - 4,000 ريال",
+        "3,000 - 5,000 ريال",
+        "3,500 - 6,000 ريال"
+    ],
+
+    uae:[
+        "2,500 - 4,500 درهم",
+        "3,000 - 5,500 درهم",
+        "3,500 - 6,500 درهم"
+    ],
+
+    qatar:[
+        "2,000 - 3,500 ريال",
+        "2,500 - 4,500 ريال",
+        "3,000 - 5,500 ريال"
+    ],
+
+    kuwait:[
+        "180 - 300 دينار",
+        "220 - 350 دينار",
+        "250 - 400 دينار"
+    ],
+
+    bahrain:[
+        "180 - 280 دينار",
+        "220 - 350 دينار",
+        "250 - 400 دينار"
+    ],
+
+    oman:[
+        "180 - 300 ريال",
+        "220 - 350 ريال",
+        "250 - 400 ريال"
+    ],
+
+    morocco:[
+        "3,000 - 4,500 درهم",
+        "3,500 - 5,500 درهم",
+        "4,000 - 6,500 درهم"
+    ],
+
+    algeria:[
+        "35,000 - 50,000 دج",
+        "40,000 - 60,000 دج",
+        "45,000 - 70,000 دج"
+    ],
+
+    tunisia:[
+        "900 - 1,300 دينار",
+        "1,000 - 1,500 دينار",
+        "1,200 - 1,800 دينار"
+    ],
+
+    egypt:[
+        "8,000 - 12,000 جنيه",
+        "10,000 - 15,000 جنيه",
+        "12,000 - 18,000 جنيه"
+    ],
+
+    jordan:[
+        "300 - 450 دينار",
+        "350 - 550 دينار",
+        "400 - 650 دينار"
+    ]
+
+};
+
+
+/* =====================================================
+   توليد الوظائف
 ===================================================== */
 
 function generateJobs(countryKey){
 
-    const country =
-        countries[countryKey];
-
+    const country = countries[countryKey];
     const result = [];
 
     for(let i=0;i<100;i++){
 
         const template =
-            jobTemplates[
-                i % jobTemplates.length
-            ];
+            jobTemplates[i % jobTemplates.length];
 
         const city =
-            country.cities[
-                i % country.cities.length
-            ];
+            country.cities[i % country.cities.length];
 
         const company =
-            companyNames[
-                i % companyNames.length
-            ];
+            companyNames[i % companyNames.length];
+
+        const salaries =
+            salaryRanges[countryKey];
+
+        const salary =
+            salaries[i % salaries.length];
+
+        const daysAgo =
+            i % 12;
+
+        const applicants =
+            3 + ((i * 7) % 47);
 
         result.push({
 
-            id:
-                countryKey+"_"+(i+1),
+            id:countryKey+"_"+(i+1),
 
-            title:
-                template.title,
+            title:template[0],
 
-            icon:
-                template.icon,
+            icon:template[1],
 
-            category:
-                template.category,
+            category:template[2],
 
-            country:
-                countryKey,
+            country:countryKey,
 
-            city:
-                city,
+            city:city,
 
-            company:
-                company,
+            company:company,
 
-            type:
-                i % 7 === 0
+            type:i % 7 === 0
                 ? "دوام جزئي"
                 : "دوام كامل",
 
-            salary:
-                "حسب الوظيفة والخبرة",
+            salary:salary,
+
+            daysAgo:daysAgo,
+
+            applicants:applicants,
 
             description:
                 "فرصة عمل متاحة ضمن مجال "+
-                template.category+
-                ". يرجى مراجعة تفاصيل الجهة وشروط الوظيفة قبل التقديم."
+                template[2]+
+                ". يرجى مراجعة تفاصيل الوظيفة والشروط المطلوبة والتأكد من ملاءمتها لك قبل إرسال طلب التقديم."
 
         });
 
@@ -1430,10 +1685,6 @@ function generateJobs(countryKey){
     return result;
 }
 
-
-/* =====================================================
-   إنشاء جميع الوظائف
-===================================================== */
 
 const allJobs = {};
 
@@ -1452,25 +1703,20 @@ Object.keys(countries).forEach(function(country){
 function renderCountries(){
 
     const box =
-        document.getElementById(
-            "countries"
-        );
+        document.getElementById("countries");
 
     box.innerHTML = "";
 
     Object.keys(countries).forEach(function(key){
 
-        const country =
-            countries[key];
+        const country = countries[key];
 
         const card =
             document.createElement("div");
 
-        card.className =
-            "country";
+        card.className = "country";
 
-        card.dataset.country =
-            key;
+        card.dataset.country = key;
 
         card.innerHTML = `
 
@@ -1487,12 +1733,13 @@ function renderCountries(){
             </div>
 
             <h3>
-                ${country.name}
+                ${escapeHTML(country.name)}
             </h3>
 
             <p>
                 ${country.cities
                     .slice(0,3)
+                    .map(escapeHTML)
                     .join(" · ")}
             </p>
 
@@ -1505,9 +1752,7 @@ function renderCountries(){
         card.addEventListener(
             "click",
             function(){
-
                 showCountry(key);
-
             }
         );
 
@@ -1533,57 +1778,33 @@ function showCountry(countryKey){
     document
         .querySelectorAll(".country")
         .forEach(function(card){
-
-            card.classList.remove(
-                "active"
-            );
-
+            card.classList.remove("active");
         });
 
     const selected =
         document.querySelector(
-            '.country[data-country="'+
-            countryKey+
-            '"]'
+            '.country[data-country="'+countryKey+'"]'
         );
 
     if(selected){
-
-        selected.classList.add(
-            "active"
-        );
-
+        selected.classList.add("active");
     }
 
-
-    document.getElementById(
-        "jobsFlag"
-    ).textContent =
+    document.getElementById("jobsFlag").textContent =
         country.flag;
 
-
-    document.getElementById(
-        "jobsCountry"
-    ).textContent =
+    document.getElementById("jobsCountry").textContent =
         "وظائف "+country.name;
 
-
-    document.getElementById(
-        "jobsSubtitle"
-    ).textContent =
+    document.getElementById("jobsSubtitle").textContent =
         "100 فرصة عمل متاحة";
-
 
     renderJobs(jobs);
 
-
     const section =
-        document.getElementById(
-            "jobsSection"
-        );
+        document.getElementById("jobsSection");
 
     section.classList.add("show");
-
 
     setTimeout(function(){
 
@@ -1604,21 +1825,16 @@ function showCountry(countryKey){
 function renderJobs(jobs){
 
     const box =
-        document.getElementById(
-            "jobs"
-        );
+        document.getElementById("jobs");
 
     box.innerHTML = "";
 
     jobs.forEach(function(job){
 
         const card =
-            document.createElement(
-                "article"
-            );
+            document.createElement("article");
 
-        card.className =
-            "job";
+        card.className = "job";
 
         card.innerHTML = `
 
@@ -1643,7 +1859,7 @@ function renderJobs(jobs){
                     </div>
 
                     <span class="job-new">
-                        متاح
+                        ${job.daysAgo <= 2 ? "جديد" : "متاح"}
                     </span>
 
                 </div>
@@ -1662,6 +1878,10 @@ function renderJobs(jobs){
                         ⏱️ ${escapeHTML(job.type)}
                     </span>
 
+                    <span class="tag">
+                        👥 ${job.applicants} متقدم
+                    </span>
+
                 </div>
 
                 <div class="job-bottom">
@@ -1674,10 +1894,18 @@ function renderJobs(jobs){
                         class="apply"
                         onclick="openJob('${job.id}')">
 
-                        تقدم للوظيفة
+                        تفاصيل
 
                     </button>
 
+                </div>
+
+                <div style="
+                    margin-top:7px;
+                    color:#9aa4b2;
+                    font-size:9px;
+                ">
+                    📅 ${formatDate(job.daysAgo)}
                 </div>
 
             </div>
@@ -1692,11 +1920,38 @@ function renderJobs(jobs){
 
 
 /* =====================================================
-   فتح تفاصيل الوظيفة
+   التاريخ
+===================================================== */
+
+function formatDate(daysAgo){
+
+    const date = new Date();
+
+    date.setDate(
+        date.getDate() - daysAgo
+    );
+
+    return date.toLocaleDateString(
+        "ar",
+        {
+            year:"numeric",
+            month:"long",
+            day:"numeric"
+        }
+    );
+}
+
+
+/* =====================================================
+   الوظيفة الحالية
 ===================================================== */
 
 let currentJob = null;
 
+
+/* =====================================================
+   فتح تفاصيل الوظيفة
+===================================================== */
 
 function openJob(jobId){
 
@@ -1712,78 +1967,44 @@ function openJob(jobId){
     currentJob =
         allJobs[countryKey][index];
 
-
     if(!currentJob){
         return;
     }
 
-
-    document.getElementById(
-        "modalImage"
-    ).textContent =
+    document.getElementById("modalImage").textContent =
         currentJob.icon;
 
-
-    document.getElementById(
-        "modalTitle"
-    ).textContent =
+    document.getElementById("modalTitle").textContent =
         currentJob.title;
 
-
-    document.getElementById(
-        "modalCompany"
-    ).textContent =
+    document.getElementById("modalCompany").textContent =
         currentJob.company;
 
-
-    document.getElementById(
-        "modalCountry"
-    ).textContent =
-        countries[
-            currentJob.country
-        ].flag+
+    document.getElementById("modalCountry").textContent =
+        countries[currentJob.country].flag+
         " "+
-        countries[
-            currentJob.country
-        ].name;
+        countries[currentJob.country].name;
 
+    document.getElementById("modalCity").textContent =
+        "📍 "+currentJob.city;
 
-    document.getElementById(
-        "modalCity"
-    ).textContent =
-        "📍 "+
-        currentJob.city;
+    document.getElementById("modalType").textContent =
+        "⏱️ "+currentJob.type;
 
+    document.getElementById("modalSalary").textContent =
+        "💰 "+currentJob.salary;
 
-    document.getElementById(
-        "modalType"
-    ).textContent =
-        "⏱️ "+
-        currentJob.type;
-
-
-    document.getElementById(
-        "modalSalary"
-    ).textContent =
-        "💰 "+
-        currentJob.salary;
-
-
-    document.getElementById(
-        "modalDescription"
-    ).textContent =
+    document.getElementById("modalDescription").textContent =
         currentJob.description;
 
-
-    document
-        .getElementById("modal")
-        .classList.add("show");
+    document.getElementById("modal").classList.add("show");
 
 }
 
 
 /* =====================================================
-   التقديم
+   المرحلة الأولى:
+   فتح نموذج التقديم
 ===================================================== */
 
 function applyForJob(){
@@ -1792,11 +2013,280 @@ function applyForJob(){
         return;
     }
 
+    closeModal();
+
+    prepareApplicationForm();
+
+    document
+        .getElementById("applicationModal")
+        .classList.add("show");
+
+}
+
+
+/* =====================================================
+   تجهيز النموذج
+===================================================== */
+
+function prepareApplicationForm(){
+
+    if(!currentJob){
+        return;
+    }
+
+    document.getElementById("formJobTitle").textContent =
+        currentJob.title;
+
+    document.getElementById("formJobDetails").textContent =
+        countries[currentJob.country].flag+
+        " "+
+        countries[currentJob.country].name+
+        " · "+
+        currentJob.city+
+        " · "+
+        currentJob.company;
+
+    document.getElementById("applicationJob").value =
+        currentJob.title;
+
+    const countrySelect =
+        document.getElementById(
+            "applicationCountry"
+        );
+
+    countrySelect.innerHTML =
+        '<option value="">اختر الدولة</option>';
+
+    Object.keys(countries).forEach(function(key){
+
+        const option =
+            document.createElement("option");
+
+        option.value = key;
+
+        option.textContent =
+            countries[key].name;
+
+        if(key === currentJob.country){
+            option.selected = true;
+        }
+
+        countrySelect.appendChild(option);
+
+    });
+
+    updateCities();
+
+    document.getElementById("formError")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   تحديث المدينة
+===================================================== */
+
+function updateCities(){
+
+    const countryKey =
+        document.getElementById(
+            "applicationCountry"
+        ).value;
+
+    const cityInput =
+        document.getElementById(
+            "applicationCity"
+        );
+
+    if(!countryKey){
+        cityInput.value = "";
+        return;
+    }
+
+    cityInput.value =
+        countries[countryKey].cities[0];
+
+}
+
+
+document
+    .getElementById("applicationCountry")
+    .addEventListener(
+        "change",
+        updateCities
+    );
+
+
+/* =====================================================
+   المرحلة الثانية:
+   إرسال النموذج والتحقق
+===================================================== */
+
+function submitApplication(event){
+
+    event.preventDefault();
+
+    const form =
+        document.getElementById(
+            "applicationForm"
+        );
+
+    const error =
+        document.getElementById(
+            "formError"
+        );
+
+    if(!form.checkValidity()){
+
+        error.textContent =
+            "يرجى ملء جميع الحقول المطلوبة بشكل صحيح.";
+
+        error.classList.add("show");
+
+        form.reportValidity();
+
+        return;
+
+    }
+
+    const age =
+        Number(
+            document.getElementById("age").value
+        );
+
+    if(age < 18 || age > 70){
+
+        error.textContent =
+            "يرجى إدخال عمر صحيح بين 18 و70 سنة.";
+
+        error.classList.add("show");
+
+        return;
+
+    }
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    if(phone.length < 7){
+
+        error.textContent =
+            "يرجى إدخال رقم هاتف صحيح.";
+
+        error.classList.add("show");
+
+        return;
+
+    }
+
+    error.classList.remove("show");
 
     /*
-       هنا مكان ربط OGAds.
+       حفظ محلي فقط في المتصفح.
+       لا يتم إرسال البيانات إلى أي خادم
+       في هذه النسخة.
+    */
 
-       إذا كان لديك رابط عرض مباشر:
+    const applicationData = {
+
+        name:
+            document.getElementById("fullName").value.trim(),
+
+        phone:
+            phone,
+
+        email:
+            document.getElementById("email").value.trim(),
+
+        age:
+            age,
+
+        country:
+            document.getElementById("applicationCountry").value,
+
+        city:
+            document.getElementById("applicationCity").value.trim(),
+
+        experience:
+            document.getElementById("experience").value,
+
+        job:
+            currentJob.title,
+
+        jobId:
+            currentJob.id,
+
+        createdAt:
+            new Date().toISOString()
+
+    };
+
+
+    try{
+
+        localStorage.setItem(
+            "lastJobApplication",
+            JSON.stringify(applicationData)
+        );
+
+    }catch(e){
+
+        console.log(
+            "LocalStorage unavailable"
+        );
+
+    }
+
+
+    closeApplicationModal();
+
+    showSuccessModal();
+
+}
+
+
+/* =====================================================
+   رسالة النجاح
+===================================================== */
+
+function showSuccessModal(){
+
+    if(!currentJob){
+        return;
+    }
+
+    document.getElementById(
+        "successJobTitle"
+    ).textContent =
+        currentJob.title;
+
+    document.getElementById(
+        "successJobCompany"
+    ).textContent =
+        currentJob.company+
+        " · "+
+        currentJob.city;
+
+    document
+        .getElementById("successModal")
+        .classList.add("show");
+
+}
+
+
+/* =====================================================
+   إتمام التقديم
+===================================================== */
+
+function completeApplication(){
+
+    if(!currentJob){
+        return;
+    }
+
+    /*
+       هنا يتم الانتقال للرابط الخارجي.
     */
 
     if(OGADS_LINK){
@@ -1808,52 +2298,15 @@ function applyForJob(){
 
     }
 
-
-    /*
-       أو إذا كنت ستبني الرابط
-       اعتمادًا على Offer ID
-       الخاص بك، يمكنك تعديله هنا.
-    */
-
-    if(OGADS_OFFER_ID){
-
-        /*
-           ضع صيغة الرابط التي يعطيك
-           إياها نظام OGAds هنا.
-
-           مثال تركيبي فقط:
-
-           const link =
-             "YOUR_OGADS_URL/" +
-             OGADS_OFFER_ID;
-
-           window.location.href = link;
-        */
-
-        showToast(
-            "تم تجهيز Offer ID: "+
-            OGADS_OFFER_ID+
-            " — ضع صيغة رابط العرض في applyForJob()"
-        );
-
-        return;
-
-    }
-
-
-    /*
-       في حالة عدم وضع رابط بعد.
-    */
-
     showToast(
-        "ضع رابط عرض OGAds في OGADS_LINK أولاً"
+        "ضع رابط التقديم الخارجي في OGADS_LINK أولاً."
     );
 
 }
 
 
 /* =====================================================
-   إغلاق النافذة
+   إغلاق النوافذ
 ===================================================== */
 
 function closeModal(){
@@ -1865,22 +2318,84 @@ function closeModal(){
 }
 
 
+function closeApplicationModal(){
+
+    document
+        .getElementById("applicationModal")
+        .classList.remove("show");
+
+}
+
+
+function closeSuccessModal(){
+
+    document
+        .getElementById("successModal")
+        .classList.remove("show");
+
+}
+
+
 document
     .getElementById("modal")
     .addEventListener(
         "click",
         function(event){
 
-            if(
-                event.target === this
-            ){
-
+            if(event.target === this){
                 closeModal();
-
             }
 
         }
     );
+
+
+document
+    .getElementById("applicationModal")
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(event.target === this){
+                closeApplicationModal();
+            }
+
+        }
+    );
+
+
+document
+    .getElementById("successModal")
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(event.target === this){
+                closeSuccessModal();
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   ESC
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeModal();
+            closeApplicationModal();
+            closeSuccessModal();
+
+        }
+
+    }
+);
 
 
 /* =====================================================
@@ -1891,30 +2406,11 @@ function escapeHTML(value){
 
     return String(value)
 
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-
-        .replace(
-            /</g,
-            "&lt;"
-        )
-
-        .replace(
-            />/g,
-            "&gt;"
-        )
-
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-
-        .replace(
-            /'/g,
-            "&#039;"
-        );
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
@@ -1926,11 +2422,8 @@ function escapeHTML(value){
 function backToCountries(){
 
     document
-        .getElementById(
-            "jobsSection"
-        )
+        .getElementById("jobsSection")
         .classList.remove("show");
-
 
     scrollToCountries();
 
@@ -1944,9 +2437,7 @@ function backToCountries(){
 function scrollToCountries(){
 
     document
-        .getElementById(
-            "countriesSection"
-        )
+        .getElementById("countriesSection")
         .scrollIntoView({
             behavior:"smooth",
             block:"start"
@@ -1964,9 +2455,7 @@ let toastTimer;
 function showToast(message){
 
     const toast =
-        document.getElementById(
-            "toast"
-        );
+        document.getElementById("toast");
 
     clearTimeout(toastTimer);
 
