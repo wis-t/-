@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>فرص العمل العربية</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
-:root{
-    --green:#087f5b;
-    --green2:#075b43;
-    --light:#f4f8f6;
-    --border:#e3ebe7;
-    --text:#17231f;
-    --muted:#74817c;
-    --white:#fff;
-}
-
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:var(--light);
-    color:var(--text);
+    background:#f5f7f6;
+    color:#17231f;
     line-height:1.7;
 }
 
@@ -39,23 +26,22 @@ button{
 }
 
 .container{
-    width:min(1120px,94%);
+    width:min(1150px,94%);
     margin:auto;
 }
-
 
 /* HEADER */
 
 header{
     background:#fff;
-    border-bottom:1px solid var(--border);
+    border-bottom:1px solid #e5ebe8;
     position:sticky;
     top:0;
     z-index:1000;
 }
 
 .nav{
-    height:68px;
+    height:65px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -64,149 +50,152 @@ header{
 .logo{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:9px;
     font-weight:900;
     font-size:19px;
 }
 
 .logo-icon{
-    width:42px;
-    height:42px;
-    border-radius:13px;
-    background:var(--green);
-    color:#fff;
+    width:40px;
+    height:40px;
+    background:#087f5b;
+    color:white;
+    border-radius:12px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:22px;
+    font-size:21px;
 }
 
-.jobs-count{
-    background:#e7f8f0;
-    color:var(--green);
-    padding:7px 12px;
-    border-radius:20px;
-    font-size:11px;
+.back-btn{
+    display:none;
+    border:0;
+    background:#eef4f1;
+    color:#087f5b;
+    padding:8px 14px;
+    border-radius:9px;
     font-weight:900;
 }
-
 
 /* HERO */
 
 .hero{
     background:
-    radial-gradient(circle at 10% 20%,rgba(255,255,255,.12),transparent 25%),
-    linear-gradient(135deg,var(--green2),var(--green),#0b9e71);
-
-    color:#fff;
-    padding:48px 0 60px;
+    radial-gradient(circle at 15% 20%,rgba(255,255,255,.12),transparent 25%),
+    linear-gradient(135deg,#075b43,#087f5b,#0a9c70);
+    color:white;
+    padding:48px 0 55px;
     text-align:center;
 }
 
 .hero h1{
-    font-size:clamp(32px,6vw,55px);
+    font-size:clamp(30px,5vw,52px);
     line-height:1.2;
     font-weight:950;
 }
 
 .hero h1 span{
-    color:#d9fff1;
+    color:#d7fff0;
 }
 
 .hero p{
+    margin:12px auto 0;
     max-width:650px;
-    margin:13px auto 0;
-    opacity:.92;
     font-size:14px;
+    opacity:.93;
 }
 
-.hero-badge{
-    display:inline-block;
-    background:rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.18);
-    padding:6px 14px;
-    border-radius:30px;
-    margin-bottom:15px;
+/* STATS */
+
+.stats{
+    margin-top:-30px;
+    position:relative;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.stat{
+    background:white;
+    border-radius:15px;
+    padding:16px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(20,40,40,.08);
+}
+
+.stat strong{
+    display:block;
+    color:#087f5b;
+    font-size:23px;
+    font-weight:950;
+}
+
+.stat small{
+    color:#7b8581;
     font-size:11px;
-    font-weight:900;
 }
-
 
 /* MAIN */
 
 main{
-    padding:45px 0 70px;
+    padding:50px 0;
 }
 
-.section-head{
+.section-title{
     text-align:center;
-    margin-bottom:24px;
+    margin-bottom:25px;
 }
 
-.section-head h2{
-    font-size:27px;
+.section-title h2{
+    font-size:28px;
     font-weight:950;
 }
 
-.section-head p{
-    color:var(--muted);
+.section-title p{
+    color:#78837f;
     font-size:12px;
 }
-
 
 /* COUNTRIES */
 
 .countries{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:13px;
-    margin-bottom:42px;
+    gap:14px;
 }
 
 .country{
-    background:#fff;
-    border:1px solid var(--border);
+    background:white;
+    border:1px solid #e3eae7;
     border-radius:17px;
-    padding:18px;
+    padding:19px;
     cursor:pointer;
     transition:.2s;
-    position:relative;
-    overflow:hidden;
+    text-align:right;
 }
 
 .country:hover{
     transform:translateY(-4px);
-    box-shadow:0 14px 30px rgba(20,40,40,.09);
+    border-color:#087f5b;
+    box-shadow:0 14px 30px rgba(20,40,40,.1);
 }
 
-.country.active{
-    border:2px solid var(--green);
-    background:#effaf5;
-}
-
-.country .flag{
-    font-size:31px;
+.flag{
+    font-size:32px;
     margin-bottom:5px;
 }
 
 .country h3{
-    font-size:16px;
+    font-size:17px;
 }
 
 .country p{
-    color:var(--muted);
+    color:#7b8581;
     font-size:10px;
-    margin-top:2px;
 }
-
-.country .arrow{
-    position:absolute;
-    left:14px;
-    bottom:16px;
-    color:var(--green);
-    font-weight:900;
-}
-
 
 /* JOB SECTION */
 
@@ -214,162 +203,142 @@ main{
     display:none;
 }
 
-.jobs-section.show{
-    display:block;
-}
-
 .jobs-header{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:18px;
-    margin-bottom:17px;
-
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
     gap:15px;
 }
 
-.jobs-country{
+.jobs-title{
     display:flex;
     align-items:center;
     gap:10px;
 }
 
-.jobs-country .big-flag{
-    font-size:34px;
+.jobs-title .flag{
+    margin:0;
+    font-size:31px;
 }
 
-.jobs-country h2{
-    font-size:22px;
+.jobs-title h2{
+    font-size:25px;
 }
 
-.jobs-country p{
-    color:var(--muted);
+.jobs-title p{
     font-size:11px;
+    color:#7a8581;
 }
 
-.back-btn{
-    border:0;
-    background:#eef3f1;
-    color:#37443f;
-    padding:10px 15px;
-    border-radius:10px;
+.jobs-count{
+    background:#e5f8f0;
+    color:#087f5b;
+    border-radius:20px;
+    padding:5px 10px;
+    font-size:11px;
     font-weight:900;
 }
-
-
-/* JOBS */
 
 .jobs{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:16px;
 }
 
+/* JOB CARD */
+
 .job{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:18px;
+    background:white;
+    border:1px solid #e5ebe8;
+    border-radius:17px;
     overflow:hidden;
     transition:.2s;
 }
 
 .job:hover{
     transform:translateY(-3px);
-    box-shadow:0 14px 30px rgba(20,40,40,.08);
+    box-shadow:0 13px 30px rgba(20,40,40,.09);
+}
+
+.job-image{
+    height:150px;
+    background:#e8f5ef;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+}
+
+.job-body{
+    padding:17px;
 }
 
 .job-top{
     display:flex;
-    align-items:center;
-    gap:13px;
-    padding:16px 17px 10px;
-}
-
-.job-image{
-    width:62px;
-    height:62px;
-    border-radius:15px;
-    background:#eaf7f2;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:31px;
-    flex-shrink:0;
-}
-
-.job-info{
-    min-width:0;
+    justify-content:space-between;
+    gap:10px;
 }
 
 .job h3{
-    font-size:16px;
+    font-size:17px;
     line-height:1.4;
 }
 
 .company{
-    color:var(--muted);
-    font-size:10px;
+    color:#7c8783;
+    font-size:11px;
     margin-top:3px;
 }
 
-.job-body{
-    padding:5px 17px 17px;
+.available{
+    background:#e7f8f0;
+    color:#087f5b;
+    border-radius:20px;
+    padding:4px 8px;
+    height:max-content;
+    font-size:9px;
+    font-weight:900;
+    white-space:nowrap;
 }
 
 .tags{
     display:flex;
     flex-wrap:wrap;
     gap:5px;
-    margin:7px 0 11px;
+    margin:12px 0;
 }
 
 .tag{
     background:#f1f4f3;
-    color:#65716d;
-    padding:4px 7px;
+    color:#68736f;
     border-radius:7px;
+    padding:4px 7px;
     font-size:9px;
 }
 
 .job-description{
-    color:#68746f;
+    color:#697572;
     font-size:11px;
-    margin-bottom:13px;
+    margin-bottom:14px;
 }
 
-.job-footer{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-}
-
-.salary{
-    color:var(--green);
-    font-size:10px;
-    font-weight:900;
-}
-
-.details-btn{
+.apply{
+    width:100%;
     border:0;
-    background:var(--green);
-    color:#fff;
-    padding:9px 14px;
+    background:#087f5b;
+    color:white;
+    padding:11px;
     border-radius:9px;
-    font-size:11px;
     font-weight:900;
 }
-
 
 /* MODAL */
 
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.62);
+    background:rgba(0,0,0,.58);
     display:none;
     align-items:center;
     justify-content:center;
@@ -382,12 +351,12 @@ main{
 }
 
 .modal-box{
-    background:#fff;
     width:min(570px,100%);
     max-height:90vh;
     overflow:auto;
-    border-radius:21px;
-    padding:24px;
+    background:white;
+    border-radius:20px;
+    padding:25px;
     position:relative;
 }
 
@@ -395,111 +364,94 @@ main{
     position:absolute;
     left:15px;
     top:13px;
-    width:36px;
-    height:36px;
+    width:35px;
+    height:35px;
     border:0;
     border-radius:50%;
-    background:#f0f3f2;
-    font-size:21px;
+    background:#eef2f0;
+    font-size:20px;
 }
 
-.modal-job-head{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding-left:40px;
-}
-
-.modal-icon{
-    width:65px;
-    height:65px;
-    border-radius:16px;
-    background:#eaf7f2;
+.modal-image{
+    height:130px;
+    background:#e8f5ef;
+    border-radius:15px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:32px;
+    font-size:60px;
+    margin-bottom:17px;
 }
 
-.modal-job-head h2{
-    font-size:22px;
-    line-height:1.4;
+.modal-box h2{
+    font-size:24px;
+    padding-left:35px;
 }
 
 .modal-company{
-    color:var(--muted);
-    font-size:11px;
-    margin-top:3px;
+    color:#78837f;
+    font-size:12px;
+    margin:4px 0 17px;
 }
 
 .modal-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:8px;
-    margin:20px 0;
+    margin-bottom:17px;
 }
 
 .modal-item{
-    background:#f4f7f6;
-    border-radius:10px;
-    padding:11px;
+    background:#f3f6f5;
+    padding:10px;
+    border-radius:9px;
     font-size:11px;
 }
 
 .modal-description{
-    color:#5f6c67;
+    color:#606c68;
     font-size:12px;
     margin-bottom:18px;
 }
 
-.apply-btn{
+.apply-main{
     width:100%;
     border:0;
-    background:linear-gradient(135deg,var(--green2),var(--green));
-    color:#fff;
+    background:#087f5b;
+    color:white;
     padding:14px;
-    border-radius:11px;
+    border-radius:10px;
     font-weight:950;
     font-size:14px;
 }
 
-.note{
-    text-align:center;
-    color:#7d8884;
-    font-size:9px;
-    margin-top:8px;
-}
+/* OFFER */
 
-
-/* EMPTY / CTA */
-
-.empty{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:40px;
+.offer-box{
+    display:none;
     text-align:center;
 }
 
-.info-box{
-    margin-top:40px;
-    background:#fff;
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
+.offer-box h2{
+    padding:0;
+    margin-bottom:8px;
 }
 
-.info-box h2{
-    font-size:23px;
-}
-
-.info-box p{
-    color:var(--muted);
+.offer-box p{
+    color:#68736f;
     font-size:12px;
-    max-width:650px;
-    margin:8px auto 0;
+    margin-bottom:18px;
 }
 
+.offer-button{
+    width:100%;
+    border:0;
+    background:#087f5b;
+    color:#fff;
+    padding:14px;
+    border-radius:10px;
+    font-weight:950;
+}
 
 /* FOOTER */
 
@@ -508,14 +460,12 @@ footer{
     color:#aeb9b5;
     text-align:center;
     padding:30px 20px;
-    font-size:10px;
+    font-size:11px;
 }
 
 footer strong{
     color:#fff;
-    font-size:13px;
 }
-
 
 /* MOBILE */
 
@@ -537,6 +487,10 @@ footer strong{
         grid-template-columns:1fr;
     }
 
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
     .jobs-header{
         align-items:flex-start;
         flex-direction:column;
@@ -547,20 +501,7 @@ footer strong{
 @media(max-width:450px){
 
     .countries{
-        grid-template-columns:1fr 1fr;
-        gap:9px;
-    }
-
-    .country{
-        padding:14px;
-    }
-
-    .country .flag{
-        font-size:26px;
-    }
-
-    .country h3{
-        font-size:14px;
+        grid-template-columns:1fr;
     }
 
     .modal-grid{
@@ -568,34 +509,23 @@ footer strong{
     }
 
 }
-
 </style>
-
 </head>
 
-
 <body>
-
 
 <header>
 
 <div class="container nav">
 
 <div class="logo">
-
-<div class="logo-icon">
-🌍
+<div class="logo-icon">🌍</div>
+<span>فرص العمل العربية</span>
 </div>
 
-<span>
-فرص العمل العربية
-</span>
-
-</div>
-
-<div class="jobs-count">
-100 وظيفة
-</div>
+<button class="back-btn" id="backBtn" onclick="showCountries()">
+← الدول
+</button>
 
 </div>
 
@@ -606,17 +536,37 @@ footer strong{
 
 <div class="container">
 
-<div class="hero-badge">
-💼 فرص عمل في العالم العربي
-</div>
-
 <h1>
-ابحث عن <span>وظيفتك القادمة</span>
+اعثر على <span>فرصتك القادمة</span>
 </h1>
 
 <p>
-اختر دولتك وشاهد الوظائف المتاحة مباشرة بدون الحاجة إلى البحث.
+اختر الدولة وشاهد أحدث فرص العمل المتاحة في مختلف المجالات.
 </p>
+
+</div>
+
+</section>
+
+
+<section class="stats">
+
+<div class="container stats-grid">
+
+<div class="stat">
+<strong>11</strong>
+<small>دولة عربية</small>
+</div>
+
+<div class="stat">
+<strong>1100+</strong>
+<small>فرصة عمل</small>
+</div>
+
+<div class="stat">
+<strong>24/7</strong>
+<small>الوصول إلى الوظائف</small>
+</div>
 
 </div>
 
@@ -628,79 +578,131 @@ footer strong{
 <div class="container">
 
 
-<div class="section-head">
+<!-- COUNTRIES -->
 
-<h2>
-🌍 اختر الدولة
-</h2>
+<section id="countriesSection">
+
+<div class="section-title">
+
+<h2>🌍 اختر الدولة</h2>
 
 <p>
-اختر الدولة لعرض الوظائف المتاحة فيها
+اختر الدولة لمشاهدة الوظائف المتاحة
 </p>
 
 </div>
 
-
-<!-- =========================
-     الدول
-========================= -->
-
-<div class="countries" id="countries"></div>
+<div class="countries">
 
 
-<!-- =========================
-     الوظائف
-========================= -->
+<div class="country" onclick="showJobs('saudi')">
+<div class="flag">🇸🇦</div>
+<h3>السعودية</h3>
+<p>الرياض · جدة · الدمام</p>
+</div>
+
+
+<div class="country" onclick="showJobs('uae')">
+<div class="flag">🇦🇪</div>
+<h3>الإمارات</h3>
+<p>دبي · أبوظبي · الشارقة</p>
+</div>
+
+
+<div class="country" onclick="showJobs('qatar')">
+<div class="flag">🇶🇦</div>
+<h3>قطر</h3>
+<p>الدوحة · الريان · الوكرة</p>
+</div>
+
+
+<div class="country" onclick="showJobs('kuwait')">
+<div class="flag">🇰🇼</div>
+<h3>الكويت</h3>
+<p>الكويت · حولي · الفروانية</p>
+</div>
+
+
+<div class="country" onclick="showJobs('bahrain')">
+<div class="flag">🇧🇭</div>
+<h3>البحرين</h3>
+<p>المنامة · المحرق · الرفاع</p>
+</div>
+
+
+<div class="country" onclick="showJobs('oman')">
+<div class="flag">🇴🇲</div>
+<h3>عُمان</h3>
+<p>مسقط · صلالة · صحار</p>
+</div>
+
+
+<div class="country" onclick="showJobs('morocco')">
+<div class="flag">🇲🇦</div>
+<h3>المغرب</h3>
+<p>الدار البيضاء · الرباط · طنجة</p>
+</div>
+
+
+<div class="country" onclick="showJobs('algeria')">
+<div class="flag">🇩🇿</div>
+<h3>الجزائر</h3>
+<p>الجزائر · وهران · قسنطينة</p>
+</div>
+
+
+<div class="country" onclick="showJobs('tunisia')">
+<div class="flag">🇹🇳</div>
+<h3>تونس</h3>
+<p>تونس · صفاقس · سوسة</p>
+</div>
+
+
+<div class="country" onclick="showJobs('egypt')">
+<div class="flag">🇪🇬</div>
+<h3>مصر</h3>
+<p>القاهرة · الإسكندرية · الجيزة</p>
+</div>
+
+
+<div class="country" onclick="showJobs('jordan')">
+<div class="flag">🇯🇴</div>
+<h3>الأردن</h3>
+<p>عمّان · الزرقاء · إربد</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- JOBS -->
 
 <section class="jobs-section" id="jobsSection">
 
 <div class="jobs-header">
 
-<div class="jobs-country">
+<div class="jobs-title">
 
-<div class="big-flag" id="selectedFlag">
-🇸🇦
-</div>
+<div class="flag" id="selectedFlag"></div>
 
 <div>
-
-<h2 id="selectedCountry">
-السعودية
-</h2>
-
-<p id="selectedCount">
-10 وظائف متاحة
-</p>
-
+<h2 id="selectedCountry"></h2>
+<p>100 فرصة عمل متاحة</p>
 </div>
 
 </div>
 
-<button class="back-btn" onclick="showCountries()">
-← الدول
-</button>
+<div class="jobs-count">
+100 وظيفة
+</div>
 
 </div>
 
-
-<div class="jobs" id="jobs"></div>
+<div class="jobs" id="jobList"></div>
 
 </section>
-
-
-<div class="info-box">
-
-<h2>
-🚀 فرص عمل متنوعة
-</h2>
-
-<p>
-نحاول عرض وظائف متنوعة تناسب أصحاب الخبرات المختلفة،
-بما فيها الوظائف العملية والخدمات والمطاعم والمستودعات
-والنقل والأمن والمبيعات وغيرها.
-</p>
-
-</div>
 
 
 </div>
@@ -710,9 +712,7 @@ footer strong{
 
 <footer>
 
-<strong>
-🌍 فرص العمل العربية
-</strong>
+<strong>🌍 فرص العمل العربية</strong>
 
 <br><br>
 
@@ -720,1889 +720,517 @@ footer strong{
 
 <br><br>
 
-© 2026 جميع الحقوق محفوظة
+© 2026
 
 </footer>
 
 
-
-<!-- =========================
-     MODAL
-========================= -->
+<!-- MODAL -->
 
 <div class="modal" id="modal">
 
 <div class="modal-box">
 
-<button class="close" onclick="closeModal()">
-×
-</button>
+<button class="close" onclick="closeModal()">×</button>
 
-
-<div class="modal-job-head">
-
-<div class="modal-icon" id="modalIcon">
+<div class="modal-image" id="modalImage">
 👷
 </div>
-
-<div>
 
 <h2 id="modalTitle">
 الوظيفة
 </h2>
 
-<div class="modal-company" id="modalCompany">
-الشركة
-</div>
-
-</div>
-
-</div>
-
+<div class="modal-company" id="modalCompany"></div>
 
 <div class="modal-grid">
 
-<div class="modal-item" id="modalCountry">
-🌍 الدولة
-</div>
+<div class="modal-item" id="modalCountry"></div>
 
-<div class="modal-item" id="modalCity">
-📍 المدينة
-</div>
+<div class="modal-item" id="modalCity"></div>
 
-<div class="modal-item" id="modalType">
-💼 نوع العمل
-</div>
+<div class="modal-item" id="modalType"></div>
 
-<div class="modal-item" id="modalSalary">
-💰 الراتب
-</div>
+<div class="modal-item" id="modalCategory"></div>
 
 </div>
-
 
 <div class="modal-description" id="modalDescription"></div>
 
-
-<button class="apply-btn" onclick="applyJob()">
-📩 التقديم على الوظيفة
+<button class="apply-main" onclick="showOffer()">
+تقدم للوظيفة
 </button>
 
 
-<div class="note">
-سيتم الانتقال إلى صفحة التقديم الخاصة بالعرض.
+<!-- OGADS -->
+
+<div class="offer-box" id="offerBox">
+
+<h2>
+🚀 إكمال التقديم
+</h2>
+
+<p>
+اضغط على الزر التالي لإكمال إجراءات التقديم.
+</p>
+
+<button class="offer-button" onclick="openOGAds()">
+متابعة
+</button>
+
 </div>
 
-
 </div>
 
 </div>
-
 
 
 <script>
 
+/* =====================================================
+   إعداد OGAds
+===================================================== */
 
-/* =========================================================
-   OGADS
-   =========================================================
+/*
+ضع هنا رابط عرض OGAds الخاص بك.
 
-   ضع هنا رابط الـ OGAds Content Locker أو رابط الـ Offer
-   الذي يعطيك إياه حسابك في OGAds.
+مثال:
 
-   مثال:
+const OGADS_LINK = "ضع_رابط_العرض_هنا";
 
-   const OGADS_LINK = "ضع_الرابط_هنا";
+أو إذا كان نظامك يحتاج ID:
+ضع الـ ID في المتغير التالي.
+*/
 
-   أو يمكنك وضع رابط مختلف لكل وظيفة
-   داخل الخاصية ogads في بيانات الوظائف.
+const OGADS_ID = "PUT_YOUR_OGADS_ID_HERE";
 
-========================================================= */
+
+/*
+إذا كان لديك رابط مباشر من OGAds
+يمكنك وضعه هنا.
+
+اتركه فارغاً إذا كنت ستبني الرابط
+بطريقة مختلفة.
+*/
 
 const OGADS_LINK = "";
 
 
-/*
-   إذا أردت استخدام رابط واحد لكل الوظائف:
-   ضع الرابط هنا.
-
-   إذا أردت رابط مختلف لكل وظيفة:
-   اتركه فارغًا وضع الرابط داخل:
-   ogads:"..."
-*/
-
-
-/* =========================================================
+/* =====================================================
    الدول
-========================================================= */
+===================================================== */
 
-const countries = [
+const countries = {
 
-{
-    id:"saudi",
-    name:"السعودية",
-    flag:"🇸🇦",
-    cities:"الرياض · جدة · الدمام"
+saudi:{
+name:"السعودية",
+flag:"🇸🇦",
+cities:["الرياض","جدة","الدمام","مكة","المدينة المنورة","الخبر","أبها"],
+companies:[
+"شركة أغذية",
+"شركة توزيع",
+"شركة نقل",
+"شركة خدمات",
+"شركة تجارية",
+"شركة مقاولات",
+"شركة لوجستية",
+"شركة تشغيل"
+]
 },
 
-{
-    id:"uae",
-    name:"الإمارات",
-    flag:"🇦🇪",
-    cities:"دبي · أبوظبي · الشارقة"
+uae:{
+name:"الإمارات",
+flag:"🇦🇪",
+cities:["دبي","أبوظبي","الشارقة","عجمان","رأس الخيمة"],
+companies:[
+"شركة خدمات",
+"شركة لوجستية",
+"شركة تجارية",
+"شركة مطاعم",
+"شركة نقل",
+"شركة تشغيل",
+"شركة توزيع"
+]
 },
 
-{
-    id:"qatar",
-    name:"قطر",
-    flag:"🇶🇦",
-    cities:"الدوحة · الريان · الوكرة"
+qatar:{
+name:"قطر",
+flag:"🇶🇦",
+cities:["الدوحة","الريان","الوكرة","الخور"],
+companies:[
+"شركة خدمات",
+"شركة مقاولات",
+"شركة لوجستية",
+"شركة أغذية",
+"شركة تشغيل",
+"شركة نقل"
+]
 },
 
-{
-    id:"kuwait",
-    name:"الكويت",
-    flag:"🇰🇼",
-    cities:"الكويت · حولي · الأحمدي"
+kuwait:{
+name:"الكويت",
+flag:"🇰🇼",
+cities:["الكويت","حولي","الفروانية","الجهراء","الأحمدي"],
+companies:[
+"شركة خدمات",
+"شركة توزيع",
+"شركة نقل",
+"شركة أغذية",
+"شركة تشغيل"
+]
 },
 
-{
-    id:"bahrain",
-    name:"البحرين",
-    flag:"🇧🇭",
-    cities:"المنامة · المحرق · الرفاع"
+bahrain:{
+name:"البحرين",
+flag:"🇧🇭",
+cities:["المنامة","المحرق","الرفاع","مدينة حمد"],
+companies:[
+"شركة خدمات",
+"شركة مطاعم",
+"شركة توزيع",
+"شركة نقل",
+"شركة تشغيل"
+]
 },
 
-{
-    id:"oman",
-    name:"عُمان",
-    flag:"🇴🇲",
-    cities:"مسقط · صلالة · صحار"
+oman:{
+name:"عُمان",
+flag:"🇴🇲",
+cities:["مسقط","صلالة","صحار","نزوى","صور"],
+companies:[
+"شركة خدمات",
+"شركة مقاولات",
+"شركة نقل",
+"شركة توزيع",
+"شركة تشغيل"
+]
 },
 
-{
-    id:"morocco",
-    name:"المغرب",
-    flag:"🇲🇦",
-    cities:"الدار البيضاء · الرباط · طنجة"
+morocco:{
+name:"المغرب",
+flag:"🇲🇦",
+cities:["الدار البيضاء","الرباط","طنجة","مراكش","فاس","أكادير"],
+companies:[
+"شركة توزيع",
+"شركة خدمات",
+"شركة لوجستية",
+"شركة أغذية",
+"شركة نقل",
+"شركة تشغيل"
+]
 },
 
-{
-    id:"algeria",
-    name:"الجزائر",
-    flag:"🇩🇿",
-    cities:"الجزائر · وهران · قسنطينة"
+algeria:{
+name:"الجزائر",
+flag:"🇩🇿",
+cities:["الجزائر","وهران","قسنطينة","عنابة","سطيف"],
+companies:[
+"شركة خدمات",
+"شركة توزيع",
+"شركة نقل",
+"شركة أغذية",
+"شركة تشغيل"
+]
 },
 
-{
-    id:"tunisia",
-    name:"تونس",
-    flag:"🇹🇳",
-    cities:"تونس · صفاقس · سوسة"
+tunisia:{
+name:"تونس",
+flag:"🇹🇳",
+cities:["تونس","صفاقس","سوسة","بنزرت","قابس"],
+companies:[
+"شركة خدمات",
+"شركة توزيع",
+"شركة أغذية",
+"شركة نقل",
+"شركة تشغيل"
+]
 },
 
-{
-    id:"egypt",
-    name:"مصر",
-    flag:"🇪🇬",
-    cities:"القاهرة · الجيزة · الإسكندرية"
+egypt:{
+name:"مصر",
+flag:"🇪🇬",
+cities:["القاهرة","الجيزة","الإسكندرية","المنصورة","أسيوط"],
+companies:[
+"شركة خدمات",
+"شركة توزيع",
+"شركة أغذية",
+"شركة نقل",
+"شركة تشغيل"
+]
 },
 
-{
-    id:"jordan",
-    name:"الأردن",
-    flag:"🇯🇴",
-    cities:"عمّان · الزرقاء · إربد"
+jordan:{
+name:"الأردن",
+flag:"🇯🇴",
+cities:["عمّان","الزرقاء","إربد","العقبة"],
+companies:[
+"شركة خدمات",
+"شركة توزيع",
+"شركة أغذية",
+"شركة نقل",
+"شركة تشغيل"
+]
 }
 
-];
+};
 
 
-/* =========================================================
+/* =====================================================
    الوظائف
-   100 وظيفة
-========================================================= */
+===================================================== */
 
-const jobs = [
-
-/* ================= السعودية 10 ================= */
+const jobTypes = [
 
 {
-country:"saudi",
-title:"عامل مستودع",
-company:"شركة المراعي",
-city:"الرياض",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
+name:"عامل مستودع",
 icon:"📦",
-description:"عمل في المستودعات وترتيب وتجهيز المنتجات."
+category:"مستودعات"
 },
 
 {
-country:"saudi",
-title:"عامل إنتاج",
-company:"شركة المراعي",
-city:"الرياض",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
+name:"عامل إنتاج",
 icon:"🏭",
-description:"المساعدة في عمليات الإنتاج والتعبئة."
+category:"إنتاج"
 },
 
 {
-country:"saudi",
-title:"سائق توصيل",
-company:"شركة خدمات",
-city:"جدة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات والمنتجات للعملاء."
-},
-
-{
-country:"saudi",
-title:"حارس أمن",
-company:"شركة أمن وحراسة",
-city:"الرياض",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"مراقبة وحماية المنشأة وتنظيم الدخول."
-},
-
-{
-country:"saudi",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"جدة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"أعمال النظافة والمحافظة على المرافق."
-},
-
-{
-country:"saudi",
-title:"عامل مطعم",
-company:"سلسلة مطاعم",
-city:"الدمام",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"مساعدة فريق المطعم في تجهيز الطلبات والخدمة."
-},
-
-{
-country:"saudi",
-title:"موظف مبيعات",
-company:"شركة تجارية",
-city:"الرياض",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛍️",
-description:"خدمة العملاء وعرض المنتجات وتحقيق المبيعات."
-},
-
-{
-country:"saudi",
-title:"عامل تحميل وتفريغ",
-company:"شركة لوجستية",
-city:"جدة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
+name:"عامل تعبئة وتغليف",
 icon:"📦",
-description:"تحميل وتفريغ البضائع وتنظيمها."
+category:"تعبئة"
 },
 
 {
-country:"saudi",
-title:"عامل صيانة",
-company:"شركة خدمات",
-city:"مكة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
+name:"سائق توصيل",
+icon:"🚚",
+category:"توصيل"
+},
+
+{
+name:"سائق شاحنة",
+icon:"🚛",
+category:"نقل"
+},
+
+{
+name:"عامل تحميل وتنزيل",
+icon:"💪",
+category:"مستودعات"
+},
+
+{
+name:"عامل نظافة",
+icon:"🧹",
+category:"نظافة"
+},
+
+{
+name:"حارس أمن",
+icon:"🛡️",
+category:"أمن"
+},
+
+{
+name:"عامل مطعم",
+icon:"🍔",
+category:"مطاعم"
+},
+
+{
+name:"مساعد مطبخ",
+icon:"👨‍🍳",
+category:"مطاعم"
+},
+
+{
+name:"نادل",
+icon:"🍽️",
+category:"مطاعم"
+},
+
+{
+name:"موظف استقبال",
+icon:"🧑‍💼",
+category:"خدمات"
+},
+
+{
+name:"عامل صيانة",
 icon:"🔧",
-description:"مساعدة فريق الصيانة في أعمال المنشأة."
+category:"صيانة"
 },
 
 {
-country:"saudi",
-title:"عامل مغسلة",
-company:"شركة خدمات",
-city:"الدمام",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
+name:"فني تكييف",
+icon:"❄️",
+category:"صيانة"
+},
+
+{
+name:"عامل بناء",
+icon:"👷",
+category:"بناء"
+},
+
+{
+name:"مساعد بناء",
+icon:"🏗️",
+category:"بناء"
+},
+
+{
+name:"عامل مغسلة",
 icon:"🧺",
-description:"العمل في خدمات الغسيل والترتيب."
+category:"خدمات"
 },
 
-
-/* ================= الإمارات 10 ================= */
-
-{
-country:"uae",
-title:"عامل مستودع",
-company:"شركة لوجستية",
-city:"دبي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"استلام وترتيب وتجهيز المنتجات."
-},
-
-{
-country:"uae",
-title:"عامل تعبئة",
-company:"شركة توزيع",
-city:"دبي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏭",
-description:"تعبئة وتجهيز المنتجات للشحن."
-},
-
-{
-country:"uae",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"دبي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات إلى العملاء."
-},
-
-{
-country:"uae",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"أبوظبي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة المنشآت وتنظيم الدخول."
-},
-
-{
-country:"uae",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"دبي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"تنظيف وترتيب المنشآت."
-},
-
-{
-country:"uae",
-title:"موظف مطعم",
-company:"مجموعة مطاعم",
-city:"دبي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"خدمة العملاء وتجهيز الطلبات."
-},
-
-{
-country:"uae",
-title:"عامل بناء",
-company:"شركة مقاولات",
-city:"أبوظبي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👷",
-description:"المساعدة في أعمال البناء."
-},
-
-{
-country:"uae",
-title:"عامل تحميل",
-company:"شركة شحن",
-city:"الشارقة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل وترتيب الشحنات."
-},
-
-{
-country:"uae",
-title:"موظف استقبال",
-company:"فندق",
-city:"دبي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏨",
-description:"استقبال العملاء ومساعدتهم."
-},
-
-{
-country:"uae",
-title:"عامل مغسلة سيارات",
-company:"شركة خدمات سيارات",
-city:"دبي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚗",
-description:"تنظيف السيارات والعناية بها."
-},
-
-
-/* ================= قطر 10 ================= */
-
-{
-country:"qatar",
-title:"عامل مستودع",
-company:"شركة لوجستية",
-city:"الدوحة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"ترتيب وتجهيز المنتجات داخل المستودع."
-},
-
-{
-country:"qatar",
-title:"عامل إنتاج",
-company:"شركة صناعية",
-city:"الدوحة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏭",
-description:"المساعدة في خطوط الإنتاج."
-},
-
-{
-country:"qatar",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"الدوحة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات للعملاء."
-},
-
-{
-country:"qatar",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"الدوحة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة وتنظيم دخول المنشآت."
-},
-
-{
-country:"qatar",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"الدوحة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"أعمال النظافة والخدمات العامة."
-},
-
-{
-country:"qatar",
-title:"عامل مطعم",
-company:"مجموعة مطاعم",
-city:"الدوحة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"مساعدة فريق المطعم."
-},
-
-{
-country:"qatar",
-title:"عامل بناء",
-company:"شركة مقاولات",
-city:"الريان",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👷",
-description:"المساعدة في أعمال البناء."
-},
-
-{
-country:"qatar",
-title:"عامل تحميل",
-company:"شركة شحن",
-city:"الدوحة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل وتفريغ الشحنات."
-},
-
-{
-country:"qatar",
-title:"عامل مغسلة",
-company:"شركة خدمات",
-city:"الدوحة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧺",
-description:"العمل في خدمات الغسيل."
-},
-
-{
-country:"qatar",
-title:"مساعد مطبخ",
-company:"مطعم",
-city:"الدوحة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👨‍🍳",
-description:"مساعدة الطباخين وتجهيز المطبخ."
-},
-
-
-/* ================= الكويت 10 ================= */
-
-{
-country:"kuwait",
-title:"عامل مستودع",
-company:"شركة لوجستية",
-city:"الكويت",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"ترتيب المنتجات وتجهيزها."
-},
-
-{
-country:"kuwait",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"الكويت",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات."
-},
-
-{
-country:"kuwait",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"الكويت",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة المنشآت."
-},
-
-{
-country:"kuwait",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"حولي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"تنظيف وترتيب المرافق."
-},
-
-{
-country:"kuwait",
-title:"عامل مطعم",
-company:"مجموعة مطاعم",
-city:"الكويت",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"خدمة المطعم وتجهيز الطلبات."
-},
-
-{
-country:"kuwait",
-title:"مساعد طباخ",
-company:"مطعم",
-city:"حولي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👨‍🍳",
-description:"مساعدة المطبخ."
-},
-
-{
-country:"kuwait",
-title:"عامل تحميل",
-company:"شركة شحن",
-city:"الفروانية",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل وتفريغ البضائع."
-},
-
-{
-country:"kuwait",
-title:"عامل صيانة",
-company:"شركة خدمات",
-city:"الكويت",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🔧",
-description:"المساعدة في أعمال الصيانة."
-},
-
-{
-country:"kuwait",
-title:"موظف مبيعات",
-company:"شركة تجارية",
-city:"الكويت",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛍️",
-description:"خدمة العملاء والمبيعات."
-},
-
-{
-country:"kuwait",
-title:"عامل مغسلة سيارات",
-company:"شركة خدمات",
-city:"حولي",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚗",
-description:"تنظيف السيارات."
-},
-
-
-/* ================= البحرين 10 ================= */
-
-{
-country:"bahrain",
-title:"عامل مستودع",
-company:"شركة لوجستية",
-city:"المنامة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"ترتيب المنتجات."
-},
-
-{
-country:"bahrain",
-title:"عامل إنتاج",
-company:"شركة صناعية",
-city:"المنامة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏭",
-description:"العمل في الإنتاج."
-},
-
-{
-country:"bahrain",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"المنامة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات."
-},
-
-{
-country:"bahrain",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"المنامة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة المنشآت."
-},
-
-{
-country:"bahrain",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"المحرق",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"أعمال النظافة."
-},
-
-{
-country:"bahrain",
-title:"عامل مطعم",
-company:"مطعم",
-city:"المنامة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"خدمة المطعم."
-},
-
-{
-country:"bahrain",
-title:"عامل تحميل",
-company:"شركة شحن",
-city:"المحرق",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل البضائع."
-},
-
-{
-country:"bahrain",
-title:"مساعد مطبخ",
-company:"مطعم",
-city:"المنامة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👨‍🍳",
-description:"مساعدة المطبخ."
-},
-
-{
-country:"bahrain",
-title:"عامل صيانة",
-company:"شركة خدمات",
-city:"الرفاع",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🔧",
-description:"المساعدة في الصيانة."
-},
-
-{
-country:"bahrain",
-title:"موظف مبيعات",
-company:"شركة تجارية",
-city:"المنامة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛍️",
-description:"خدمة العملاء والمبيعات."
-},
-
-
-/* ================= عمان 10 ================= */
-
-{
-country:"oman",
-title:"عامل مستودع",
-company:"شركة لوجستية",
-city:"مسقط",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"ترتيب وتجهيز المنتجات."
-},
-
-{
-country:"oman",
-title:"عامل إنتاج",
-company:"شركة صناعية",
-city:"مسقط",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏭",
-description:"المساعدة في الإنتاج."
-},
-
-{
-country:"oman",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"مسقط",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات."
-},
-
-{
-country:"oman",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"مسقط",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة المنشآت."
-},
-
-{
-country:"oman",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"صلالة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"أعمال النظافة."
-},
-
-{
-country:"oman",
-title:"عامل مطعم",
-company:"مطعم",
-city:"مسقط",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"خدمة المطعم."
-},
-
-{
-country:"oman",
-title:"عامل بناء",
-company:"شركة مقاولات",
-city:"مسقط",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👷",
-description:"المساعدة في أعمال البناء."
-},
-
-{
-country:"oman",
-title:"عامل تحميل",
-company:"شركة شحن",
-city:"صحار",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل وتفريغ البضائع."
-},
-
-{
-country:"oman",
-title:"مساعد مطبخ",
-company:"مطعم",
-city:"مسقط",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👨‍🍳",
-description:"مساعدة المطبخ."
-},
-
-{
-country:"oman",
-title:"عامل صيانة",
-company:"شركة خدمات",
-city:"صلالة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🔧",
-description:"المساعدة في الصيانة."
-},
-
-
-/* ================= المغرب 10 ================= */
-
-{
-country:"morocco",
-title:"عامل مستودع",
-company:"شركة توزيع",
-city:"الدار البيضاء",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"ترتيب المنتجات وتجهيز الطلبات."
-},
-
-{
-country:"morocco",
-title:"عامل إنتاج",
-company:"شركة صناعية",
-city:"الدار البيضاء",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏭",
-description:"العمل في خطوط الإنتاج."
-},
-
-{
-country:"morocco",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"الدار البيضاء",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات."
-},
-
-{
-country:"morocco",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"الرباط",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة المنشآت."
-},
-
-{
-country:"morocco",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"الرباط",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"أعمال النظافة."
-},
-
-{
-country:"morocco",
-title:"عامل مطعم",
-company:"مطعم",
-city:"مراكش",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"خدمة المطعم."
-},
-
-{
-country:"morocco",
-title:"عامل بناء",
-company:"شركة مقاولات",
-city:"طنجة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👷",
-description:"المساعدة في البناء."
-},
-
-{
-country:"morocco",
-title:"عامل تحميل",
-company:"شركة لوجستية",
-city:"الدار البيضاء",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل وتفريغ البضائع."
-},
-
-{
-country:"morocco",
-title:"مساعد مطبخ",
-company:"مطعم",
-city:"أكادير",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👨‍🍳",
-description:"مساعدة فريق المطبخ."
-},
-
-{
-country:"morocco",
-title:"عامل مغسلة سيارات",
-company:"شركة خدمات",
-city:"الدار البيضاء",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚗",
-description:"تنظيف السيارات."
-},
-
-
-/* ================= الجزائر 10 ================= */
-
-{
-country:"algeria",
-title:"عامل مستودع",
-company:"شركة توزيع",
-city:"الجزائر",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"ترتيب وتجهيز المنتجات."
-},
-
-{
-country:"algeria",
-title:"عامل إنتاج",
-company:"شركة صناعية",
-city:"الجزائر",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏭",
-description:"المساعدة في الإنتاج."
-},
-
-{
-country:"algeria",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"الجزائر",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات."
-},
-
-{
-country:"algeria",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"الجزائر",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة المنشآت."
-},
-
-{
-country:"algeria",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"وهران",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"أعمال النظافة."
-},
-
-{
-country:"algeria",
-title:"عامل مطعم",
-company:"مطعم",
-city:"الجزائر",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"خدمة المطعم."
-},
-
-{
-country:"algeria",
-title:"عامل بناء",
-company:"شركة مقاولات",
-city:"وهران",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👷",
-description:"المساعدة في أعمال البناء."
-},
-
-{
-country:"algeria",
-title:"عامل تحميل",
-company:"شركة شحن",
-city:"الجزائر",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل وتفريغ البضائع."
-},
-
-{
-country:"algeria",
-title:"مساعد مطبخ",
-company:"مطعم",
-city:"قسنطينة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👨‍🍳",
-description:"مساعدة المطبخ."
-},
-
-{
-country:"algeria",
-title:"عامل صيانة",
-company:"شركة خدمات",
-city:"وهران",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🔧",
-description:"المساعدة في الصيانة."
-},
-
-
-/* ================= تونس 10 ================= */
-
-{
-country:"tunisia",
-title:"عامل مستودع",
-company:"شركة توزيع",
-city:"تونس",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"ترتيب وتجهيز المنتجات."
-},
-
-{
-country:"tunisia",
-title:"عامل إنتاج",
-company:"شركة صناعية",
-city:"تونس",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏭",
-description:"المساعدة في الإنتاج."
-},
-
-{
-country:"tunisia",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"تونس",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات."
-},
-
-{
-country:"tunisia",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"تونس",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة المنشآت."
-},
-
-{
-country:"tunisia",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"صفاقس",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"أعمال النظافة."
-},
-
-{
-country:"tunisia",
-title:"عامل مطعم",
-company:"مطعم",
-city:"تونس",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"خدمة المطعم."
-},
-
-{
-country:"tunisia",
-title:"عامل بناء",
-company:"شركة مقاولات",
-city:"صفاقس",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👷",
-description:"المساعدة في البناء."
-},
-
-{
-country:"tunisia",
-title:"عامل تحميل",
-company:"شركة شحن",
-city:"تونس",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل وتفريغ البضائع."
-},
-
-{
-country:"tunisia",
-title:"مساعد مطبخ",
-company:"مطعم",
-city:"سوسة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👨‍🍳",
-description:"مساعدة المطبخ."
-},
-
-{
-country:"tunisia",
-title:"عامل صيانة",
-company:"شركة خدمات",
-city:"سوسة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🔧",
-description:"المساعدة في الصيانة."
-},
-
-
-/* ================= مصر 10 ================= */
-
-{
-country:"egypt",
-title:"عامل مستودع",
-company:"شركة توزيع",
-city:"القاهرة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"ترتيب وتجهيز المنتجات."
-},
-
-{
-country:"egypt",
-title:"عامل إنتاج",
-company:"شركة صناعية",
-city:"القاهرة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏭",
-description:"العمل في الإنتاج."
-},
-
-{
-country:"egypt",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"القاهرة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات."
-},
-
-{
-country:"egypt",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"القاهرة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة المنشآت."
-},
-
-{
-country:"egypt",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"الجيزة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"أعمال النظافة."
-},
-
-{
-country:"egypt",
-title:"عامل مطعم",
-company:"مطعم",
-city:"القاهرة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"خدمة المطعم."
-},
-
-{
-country:"egypt",
-title:"عامل بناء",
-company:"شركة مقاولات",
-city:"الجيزة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👷",
-description:"المساعدة في البناء."
-},
-
-{
-country:"egypt",
-title:"عامل تحميل",
-company:"شركة شحن",
-city:"القاهرة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل وتفريغ البضائع."
-},
-
-{
-country:"egypt",
-title:"مساعد مطبخ",
-company:"مطعم",
-city:"الإسكندرية",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👨‍🍳",
-description:"مساعدة المطبخ."
-},
-
-{
-country:"egypt",
-title:"عامل صيانة",
-company:"شركة خدمات",
-city:"القاهرة",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🔧",
-description:"المساعدة في الصيانة."
-},
-
-
-/* ================= الأردن 10 ================= */
-
-{
-country:"jordan",
-title:"عامل مستودع",
-company:"شركة توزيع",
-city:"عمّان",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"ترتيب وتجهيز المنتجات."
-},
-
-{
-country:"jordan",
-title:"عامل إنتاج",
-company:"شركة صناعية",
-city:"عمّان",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🏭",
-description:"المساعدة في الإنتاج."
-},
-
-{
-country:"jordan",
-title:"سائق توصيل",
-company:"شركة توصيل",
-city:"عمّان",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🚚",
-description:"توصيل الطلبات."
-},
-
-{
-country:"jordan",
-title:"حارس أمن",
-company:"شركة أمن",
-city:"عمّان",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🛡️",
-description:"حراسة المنشآت."
-},
-
-{
-country:"jordan",
-title:"عامل نظافة",
-company:"شركة خدمات",
-city:"الزرقاء",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🧹",
-description:"أعمال النظافة."
-},
-
-{
-country:"jordan",
-title:"عامل مطعم",
-company:"مطعم",
-city:"عمّان",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🍔",
-description:"خدمة المطعم."
-},
-
-{
-country:"jordan",
-title:"عامل بناء",
-company:"شركة مقاولات",
-city:"الزرقاء",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👷",
-description:"المساعدة في أعمال البناء."
-},
-
 {
-country:"jordan",
-title:"عامل تحميل",
-company:"شركة شحن",
-city:"عمّان",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"📦",
-description:"تحميل وتفريغ البضائع."
+name:"موظف خدمة عملاء",
+icon:"☎️",
+category:"خدمة عملاء"
 },
 
 {
-country:"jordan",
-title:"مساعد مطبخ",
-company:"مطعم",
-city:"إربد",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"👨‍🍳",
-description:"مساعدة المطبخ."
+name:"موظف مبيعات",
+icon:"🛒",
+category:"مبيعات"
 },
 
 {
-country:"jordan",
-title:"عامل صيانة",
-company:"شركة خدمات",
-city:"عمّان",
-type:"دوام كامل",
-salary:"يحدد بعد المقابلة",
-icon:"🔧",
-description:"المساعدة في الصيانة."
+name:"مندوب توصيل",
+icon:"🛵",
+category:"توصيل"
 }
 
 ];
 
 
-/* =========================================================
-   متغير الوظيفة الحالية
-========================================================= */
+/* =====================================================
+   إنشاء 100 وظيفة لكل دولة
+===================================================== */
 
-let currentJob = null;
+function generateJobs(countryKey){
+
+const country = countries[countryKey];
+
+const result = [];
+
+for(let i=0;i<100;i++){
+
+const job = jobTypes[i % jobTypes.length];
+
+const city =
+country.cities[i % country.cities.length];
+
+const company =
+country.companies[i % country.companies.length];
+
+const type =
+i % 7 === 0
+? "دوام جزئي"
+: "دوام كامل";
+
+result.push({
+
+id:countryKey+"_"+(i+1),
+
+title:job.name,
+
+icon:job.icon,
+
+category:job.category,
+
+city:city,
+
+company:company,
+
+type:type,
+
+country:countryKey,
+
+description:
+"فرصة عمل متاحة في "+country.name+
+". يرجى مراجعة شروط الوظيفة والتأكد من معلومات الجهة الناشرة قبل التقديم."
+
+});
+
+}
+
+return result;
+
+}
 
 
-/* =========================================================
+/* =====================================================
+   تخزين الوظائف
+===================================================== */
+
+const jobsData = {};
+
+Object.keys(countries).forEach(function(country){
+
+jobsData[country] =
+generateJobs(country);
+
+});
+
+
+/* =====================================================
    عرض الدول
-========================================================= */
-
-function renderCountries(){
-
-const box = document.getElementById("countries");
-
-box.innerHTML = "";
-
-countries.forEach(function(country){
-
-const count =
-jobs.filter(function(job){
-    return job.country === country.id;
-}).length;
-
-const card = document.createElement("div");
-
-card.className = "country";
-
-card.dataset.country = country.id;
-
-card.innerHTML = `
-
-<div class="flag">
-${country.flag}
-</div>
-
-<h3>
-${country.name}
-</h3>
-
-<p>
-${country.cities}
-</p>
-
-<div class="arrow">
-${count} وظائف ←
-</div>
-
-`;
-
-card.onclick = function(){
-
-selectCountry(country.id);
-
-};
-
-box.appendChild(card);
-
-});
-
-}
-
-
-/* =========================================================
-   اختيار الدولة
-========================================================= */
-
-function selectCountry(countryId){
-
-const country =
-countries.find(function(item){
-    return item.id === countryId;
-});
-
-if(!country){
-    return;
-}
-
-
-document.querySelectorAll(".country")
-.forEach(function(card){
-
-card.classList.remove("active");
-
-if(card.dataset.country === countryId){
-    card.classList.add("active");
-}
-
-});
-
-
-document.getElementById("selectedFlag")
-.textContent = country.flag;
-
-document.getElementById("selectedCountry")
-.textContent = country.name;
-
-
-const countryJobs =
-jobs.filter(function(job){
-    return job.country === countryId;
-});
-
-
-document.getElementById("selectedCount")
-.textContent =
-countryJobs.length + " وظائف متاحة";
-
-
-renderJobs(countryJobs);
-
-
-document.getElementById("jobsSection")
-.classList.add("show");
-
-
-setTimeout(function(){
-
-document.getElementById("jobsSection")
-.scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-});
-
-},100);
-
-}
-
-
-/* =========================================================
-   عرض الوظائف
-========================================================= */
-
-function renderJobs(list){
-
-const box =
-document.getElementById("jobs");
-
-box.innerHTML = "";
-
-
-if(!list.length){
-
-box.innerHTML = `
-
-<div class="empty">
-
-<h3>
-🔎 لا توجد وظائف
-</h3>
-
-<p>
-لا توجد وظائف متاحة حاليًا.
-</p>
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-list.forEach(function(job,index){
-
-const card =
-document.createElement("article");
-
-card.className = "job";
-
-
-card.innerHTML = `
-
-<div class="job-top">
-
-<div class="job-image">
-${job.icon}
-</div>
-
-<div class="job-info">
-
-<h3>
-${escapeHTML(job.title)}
-</h3>
-
-<div class="company">
-${escapeHTML(job.company)}
-</div>
-
-</div>
-
-</div>
-
-
-<div class="job-body">
-
-<div class="tags">
-
-<span class="tag">
-📍 ${escapeHTML(job.city)}
-</span>
-
-<span class="tag">
-💼 ${escapeHTML(job.type)}
-</span>
-
-<span class="tag">
-🆕 متاح
-</span>
-
-</div>
-
-
-<p class="job-description">
-${escapeHTML(job.description)}
-</p>
-
-
-<div class="job-footer">
-
-<span class="salary">
-💰 ${escapeHTML(job.salary)}
-</span>
-
-<button class="details-btn">
-عرض التفاصيل
-</button>
-
-</div>
-
-</div>
-
-`;
-
-
-card.querySelector(".details-btn")
-.onclick = function(){
-
-openJob(job);
-
-};
-
-
-box.appendChild(card);
-
-});
-
-}
-
-
-/* =========================================================
-   تفاصيل الوظيفة
-========================================================= */
-
-function openJob(job){
-
-currentJob = job;
-
-
-document.getElementById("modalIcon")
-.textContent = job.icon;
-
-document.getElementById("modalTitle")
-.textContent = job.title;
-
-document.getElementById("modalCompany")
-.textContent = job.company;
-
-
-const country =
-countries.find(function(item){
-    return item.id === job.country;
-});
-
-
-document.getElementById("modalCountry")
-textContent = country
-? country.flag + " " + country.name
-: "🌍 الدولة";
-
-
-document.getElementById("modalCountry")
-.textContent =
-country
-? country.flag + " " + country.name
-: "🌍 الدولة";
-
-
-document.getElementById("modalCity")
-.textContent =
-"📍 " + job.city;
-
-
-document.getElementById("modalType")
-.textContent =
-"💼 " + job.type;
-
-
-document.getElementById("modalSalary")
-.textContent =
-"💰 " + job.salary;
-
-
-document.getElementById("modalDescription")
-.textContent =
-job.description;
-
-
-document.getElementById("modal")
-.classList.add("show");
-
-}
-
-
-/* =========================================================
-   التقديم
-========================================================= */
-
-function applyJob(){
-
-if(!currentJob){
-    return;
-}
-
-
-/*
-===========================================================
-  هنا مكان OGADS
-===========================================================
-
-  الأفضل أن تضع لكل وظيفة رابط الـOffer الخاص بها:
-
-  ogads:"https://...."
-
-  وإذا لم يكن للوظيفة رابط خاص، سيتم استعمال:
-
-  OGADS_LINK
-
-===========================================================
-*/
-
-
-const link =
-currentJob.ogads ||
-OGADS_LINK;
-
-
-/*
-  إذا وضعت رابط OGAds سيتم فتحه.
-*/
-
-if(link){
-
-window.open(
-    link,
-    "_blank",
-    "noopener,noreferrer"
-);
-
-return;
-
-}
-
-
-/*
-  في حالة لم تضع رابط OGAds بعد.
-*/
-
-alert(
-"ضع رابط OGAds الخاص بالعرض في المتغير OGADS_LINK أعلى الكود."
-);
-
-}
-
-
-/* =========================================================
-   إغلاق النافذة
-========================================================= */
-
-function closeModal(){
-
-document.getElementById("modal")
-.classList.remove("show");
-
-}
-
-
-document.getElementById("modal")
-.addEventListener("click",function(event){
-
-if(event.target === this){
-
-closeModal();
-
-}
-
-});
-
-
-/* =========================================================
-   زر الرجوع للدول
-========================================================= */
+===================================================== */
 
 function showCountries(){
 
-document.getElementById("jobsSection")
-.classList.remove("show");
+document.getElementById("countriesSection").style.display="block";
 
+document.getElementById("jobsSection").style.display="none";
 
-document.querySelectorAll(".country")
-.forEach(function(card){
-
-card.classList.remove("active");
-
-});
-
+document.getElementById("backBtn").style.display="none";
 
 window.scrollTo({
-
-top:document.querySelector(".countries")
-.offsetTop - 90,
-
+top:0,
 behavior:"smooth"
-
 });
 
 }
 
 
-/* =========================================================
-   حماية النص
-========================================================= */
+/* =====================================================
+   عرض وظائف دولة
+===================================================== */
+
+function showJobs(countryKey){
+
+const country =
+countries[countryKey];
+
+const jobs =
+jobsData[countryKey];
+
+document.getElementById("countriesSection").style.display="none";
+
+document.getElementById("jobsSection").style.display="block";
+
+document.getElementById("backBtn").style.display="block";
+
+document.getElementById("selectedFlag").textContent =
+country.flag;
+
+document.getElementById("selectedCountry").textContent =
+"وظائف "+country.name;
+
+renderJobs(jobs);
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* =====================================================
+   حماية HTML
+===================================================== */
 
 function escapeHTML(value){
 
@@ -2617,14 +1245,281 @@ return String(value)
 }
 
 
-/* =========================================================
-   تشغيل الموقع
-========================================================= */
+/* =====================================================
+   عرض الوظائف
+===================================================== */
 
-renderCountries();
+function renderJobs(jobs){
+
+const box =
+document.getElementById("jobList");
+
+box.innerHTML="";
+
+jobs.forEach(function(job){
+
+const card =
+document.createElement("article");
+
+card.className="job";
+
+card.innerHTML = `
+
+<div class="job-image">
+
+${job.icon}
+
+</div>
+
+<div class="job-body">
+
+<div class="job-top">
+
+<div>
+
+<h3>
+${escapeHTML(job.title)}
+</h3>
+
+<div class="company">
+${escapeHTML(job.company)}
+</div>
+
+</div>
+
+<div class="available">
+متاح
+</div>
+
+</div>
+
+
+<div class="tags">
+
+<span class="tag">
+📍 ${escapeHTML(job.city)}
+</span>
+
+<span class="tag">
+💼 ${escapeHTML(job.category)}
+</span>
+
+<span class="tag">
+⏱️ ${escapeHTML(job.type)}
+</span>
+
+</div>
+
+
+<p class="job-description">
+
+${escapeHTML(job.description)}
+
+</p>
+
+
+<button
+class="apply"
+onclick='openJob(${JSON.stringify(job).replace(/'/g,"&#39;")})'
+>
+
+تقدم للوظيفة
+
+</button>
+
+</div>
+
+`;
+
+box.appendChild(card);
+
+});
+
+}
+
+
+/* =====================================================
+   الوظيفة الحالية
+===================================================== */
+
+let currentJob = null;
+
+
+/* =====================================================
+   فتح تفاصيل الوظيفة
+===================================================== */
+
+function openJob(job){
+
+currentJob = job;
+
+document.getElementById("modalImage").textContent =
+job.icon;
+
+document.getElementById("modalTitle").textContent =
+job.title;
+
+document.getElementById("modalCompany").textContent =
+job.company;
+
+document.getElementById("modalCountry").textContent =
+countries[job.country].flag+
+" "+
+countries[job.country].name;
+
+document.getElementById("modalCity").textContent =
+"📍 "+
+job.city;
+
+document.getElementById("modalType").textContent =
+"⏱️ "+
+job.type;
+
+document.getElementById("modalCategory").textContent =
+"💼 "+
+job.category;
+
+document.getElementById("modalDescription").textContent =
+job.description;
+
+
+/*
+إخفاء قسم OGAds
+*/
+
+document.querySelector(".apply-main").style.display =
+"block";
+
+document.getElementById("offerBox").style.display =
+"none";
+
+
+document.getElementById("modal").classList.add("show");
+
+}
+
+
+/* =====================================================
+   إظهار خطوة التقديم
+===================================================== */
+
+function showOffer(){
+
+document.querySelector(".apply-main").style.display =
+"none";
+
+document.getElementById("offerBox").style.display =
+"block";
+
+}
+
+
+/* =====================================================
+   OGAds
+===================================================== */
+
+function openOGAds(){
+
+/*
+الأفضل استخدام رابط العرض الذي تعطيك
+إياه OGAds مباشرة.
+*/
+
+if(OGADS_LINK){
+
+window.open(
+OGADS_LINK,
+"_blank",
+"noopener,noreferrer"
+);
+
+return;
+
+}
+
+
+/*
+إذا كنت تستخدم ID خاصًا بنظامك،
+ضع طريقة بناء الرابط هنا.
+
+مثال فقط:
+
+const url =
+"https://example.com/offer?id="+OGADS_ID;
+
+ثم استخدم:
+
+window.open(url,"_blank");
+
+*/
+
+if(
+OGADS_ID &&
+OGADS_ID !== "PUT_YOUR_OGADS_ID_HERE"
+){
+
+/*
+ضع كود/رابط OGAds الحقيقي هنا.
+*/
+
+alert(
+"تم إعداد ID الخاص بالعرض: "+
+OGADS_ID+
+"\n\nضع رابط OGAds الحقيقي في متغير OGADS_LINK."
+);
+
+return;
+
+}
+
+
+/*
+لم يتم وضع الرابط بعد
+*/
+
+alert(
+"ضع رابط عرض OGAds الخاص بك داخل OGADS_LINK في أعلى الكود."
+);
+
+}
+
+
+/* =====================================================
+   إغلاق النافذة
+===================================================== */
+
+function closeModal(){
+
+document
+.getElementById("modal")
+.classList.remove("show");
+
+}
+
+
+document
+.getElementById("modal")
+.addEventListener(
+"click",
+function(event){
+
+if(event.target === this){
+
+closeModal();
+
+}
+
+}
+);
+
+
+/* =====================================================
+   تشغيل
+===================================================== */
+
+showCountries();
 
 </script>
 
 </body>
-
 </html>
