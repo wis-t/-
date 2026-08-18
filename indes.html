@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Arab Jobs Hub - فرص العمل</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  background:#f5f8f7;
+  color:#17231f;
+  line-height:1.6;
+}
+
+button{
+  font-family:inherit;
+  cursor:pointer;
+}
+
+.container{
+  width:min(1100px,94%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  background:#fff;
+  border-bottom:1px solid #e5ebe8;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.nav{
+  min-height:65px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:19px;
+  font-weight:900;
+}
+
+.logo-icon{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:#087f5b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:21px;
+}
+
+.nav-btn{
+  border:0;
+  background:#087f5b;
+  color:#fff;
+  padding:9px 16px;
+  border-radius:9px;
+  font-weight:900;
+}
+
+/* HERO */
+
+.hero{
+  background:linear-gradient(135deg,#075b43,#087f5b,#0a9c70);
+  color:#fff;
+  padding:45px 0 55px;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  background:rgba(255,255,255,.14);
+  padding:5px 13px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  font-size:clamp(31px,5vw,52px);
+  line-height:1.2;
+  font-weight:950;
+}
+
+.hero h1 span{
+  color:#d7fff0;
+}
+
+.hero p{
+  max-width:650px;
+  margin:12px auto 0;
+  font-size:14px;
+  opacity:.94;
+}
+
+/* STATS */
+
+.stats{
+  margin-top:-28px;
+  position:relative;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.stat{
+  background:#fff;
+  border-radius:15px;
+  padding:16px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(20,40,40,.08);
+}
+
+.stat strong{
+  display:block;
+  color:#087f5b;
+  font-size:22px;
+  font-weight:950;
+}
+
+.stat small{
+  color:#77827f;
+  font-size:10px;
+}
+
+/* MAIN */
+
+main{
+  padding:45px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:22px;
+}
+
+.section-title h2{
+  font-size:27px;
+  font-weight:950;
+}
+
+.section-title p{
+  color:#78837f;
+  font-size:12px;
+}
+
+/* FILTERS */
+
+.filters{
+  background:#fff;
+  border:1px solid #e5ebe8;
+  border-radius:16px;
+  padding:13px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:22px;
+}
+
+.filters select{
+  flex:1;
+  min-width:170px;
+  padding:11px;
+  border:1px solid #dfe7e4;
+  border-radius:9px;
+  background:#fff;
+  outline:0;
+  font-family:inherit;
+}
+
+.reset{
+  border:0;
+  padding:10px 17px;
+  border-radius:9px;
+  background:#eef3f1;
+  font-weight:900;
+}
+
+/* JOBS */
+
+.jobs{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.job{
+  background:#fff;
+  border:1px solid #e5ebe8;
+  border-radius:17px;
+  overflow:hidden;
+  transition:.2s;
+  box-shadow:0 6px 20px rgba(20,40,40,.04);
+}
+
+.job:hover{
+  transform:translateY(-3px);
+  box-shadow:0 13px 30px rgba(20,40,40,.09);
+}
+
+.job-image{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  display:block;
+  background:#eaf1ee;
+}
+
+.job-content{
+  padding:17px;
+}
+
+.job-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.job h3{
+  font-size:17px;
+  line-height:1.4;
+}
+
+.company{
+  color:#7b8682;
+  font-size:11px;
+  margin-top:3px;
+}
+
+.badge-new{
+  background:#e7f8f0;
+  color:#087f5b;
+  border-radius:20px;
+  padding:4px 8px;
+  height:max-content;
+  font-size:9px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin:12px 0;
+}
+
+.tag{
+  background:#f1f4f3;
+  color:#66726e;
+  padding:4px 7px;
+  border-radius:7px;
+  font-size:9px;
+}
+
+.description{
+  color:#68736f;
+  font-size:11px;
+  margin-bottom:13px;
+}
+
+.job-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+
+.date{
+  color:#89928f;
+  font-size:9px;
+}
+
+.details{
+  border:0;
+  background:#087f5b;
+  color:#fff;
+  padding:9px 14px;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:900;
+}
+
+/* EMPTY */
+
+.empty{
+  grid-column:1/-1;
+  background:#fff;
+  padding:45px 20px;
+  border-radius:17px;
+  text-align:center;
+  color:#697572;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  z-index:5000;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  background:#fff;
+  width:min(580px,100%);
+  max-height:90vh;
+  overflow:auto;
+  border-radius:20px;
+  padding:22px;
+  position:relative;
+}
+
+.modal-image{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:14px;
+  margin-bottom:15px;
+}
+
+.close{
+  position:absolute;
+  left:15px;
+  top:13px;
+  width:35px;
+  height:35px;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 3px 12px rgba(0,0,0,.15);
+  font-size:20px;
+  z-index:2;
+}
+
+.modal-box h2{
+  font-size:24px;
+  padding-left:35px;
+}
+
+.modal-company{
+  color:#78827f;
+  font-size:12px;
+  margin:5px 0 16px;
+}
+
+.modal-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:16px;
+}
+
+.modal-item{
+  background:#f4f7f6;
+  padding:10px;
+  border-radius:9px;
+  font-size:11px;
+}
+
+.modal-description{
+  color:#5d6965;
+  font-size:12px;
+  margin-bottom:17px;
+}
+
+.apply-btn{
+  width:100%;
+  border:0;
+  background:#087f5b;
+  color:#fff;
+  padding:14px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:950;
+}
+
+.note{
+  text-align:center;
+  color:#7c8783;
+  font-size:9px;
+  margin-top:8px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#13201b;
+  color:#aeb9b5;
+  text-align:center;
+  padding:30px 20px;
+  font-size:10px;
+}
+
+footer strong{
+  color:#fff;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .jobs{
+    grid-template-columns:1fr;
+  }
+
+  .job-image{
+    height:210px;
+  }
+
+  .modal-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:450px){
+
+  .job-image{
+    height:190px;
+  }
+
+  .modal-image{
+    height:180px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <div class="logo">
+      <div class="logo-icon">🌍</div>
+      <span>Arab Jobs Hub</span>
+    </div>
+
+    <button class="nav-btn" onclick="scrollToJobs()">
+      الوظائف
+    </button>
+
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="badge">
+      🆕 أحدث فرص العمل
+    </div>
+
+    <h1>
+      اكتشف
+      <span>فرصتك القادمة</span>
+      <br>
+      في العالم العربي
+    </h1>
+
+    <p>
+      تصفح أحدث فرص العمل واختر الوظيفة المناسبة لك.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="stats">
+
+  <div class="container stats-grid">
+
+    <div class="stat">
+      <strong id="totalJobs">50</strong>
+      <small>وظيفة متاحة</small>
+    </div>
+
+    <div class="stat">
+      <strong>11</strong>
+      <small>دولة عربية</small>
+    </div>
+
+    <div class="stat">
+      <strong>24/7</strong>
+      <small>تصفح الوظائف</small>
+    </div>
+
+  </div>
+
+</section>
+
+
+<main id="jobsSection">
+
+<div class="container">
+
+  <div class="section-title">
+
+    <h2>💼 أحدث الوظائف</h2>
+
+    <p>
+      اختر الوظيفة التي تناسبك ثم اطلع على التفاصيل
+    </p>
+
+  </div>
+
+
+  <div class="filters">
+
+    <select id="filterCountry" onchange="filterJobs()">
+      <option value="">🌍 كل الدول</option>
+      <option value="saudi">🇸🇦 السعودية</option>
+      <option value="uae">🇦🇪 الإمارات</option>
+      <option value="qatar">🇶🇦 قطر</option>
+      <option value="kuwait">🇰🇼 الكويت</option>
+      <option value="bahrain">🇧🇭 البحرين</option>
+      <option value="oman">🇴🇲 عُمان</option>
+      <option value="morocco">🇲🇦 المغرب</option>
+      <option value="algeria">🇩🇿 الجزائر</option>
+      <option value="tunisia">🇹🇳 تونس</option>
+      <option value="egypt">🇪🇬 مصر</option>
+      <option value="jordan">🇯🇴 الأردن</option>
+    </select>
+
+
+    <select id="filterCategory" onchange="filterJobs()">
+      <option value="">💼 كل المجالات</option>
+      <option value="تقنية">تقنية</option>
+      <option value="هندسة">هندسة</option>
+      <option value="مبيعات">مبيعات</option>
+      <option value="محاسبة">محاسبة</option>
+      <option value="صحة">صحة</option>
+      <option value="تعليم">تعليم</option>
+      <option value="سائق">سائق</option>
+      <option value="أمن">أمن</option>
+      <option value="مطاعم">مطاعم وفنادق</option>
+      <option value="بناء">بناء</option>
+    </select>
+
+
+    <button class="reset" onclick="resetFilters()">
+      إعادة ضبط
+    </button>
+
+  </div>
+
+
+  <div class="jobs" id="jobList"></div>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<strong>🌍 Arab Jobs Hub</strong>
+
+<br><br>
+
+منصة مستقلة لعرض فرص العمل.
+
+<br><br>
+
+© 2026 Arab Jobs Hub
+
+</footer>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal()">×</button>
+
+    <img
+      id="modalImage"
+      class="modal-image"
+      src=""
+      alt=""
+    >
+
+    <h2 id="modalTitle">الوظيفة</h2>
+
+    <div
+      class="modal-company"
+      id="modalCompany">
+    </div>
+
+
+    <div class="modal-grid">
+
+      <div class="modal-item" id="modalCountry"></div>
+
+      <div class="modal-item" id="modalCity"></div>
+
+      <div class="modal-item" id="modalType"></div>
+
+      <div class="modal-item" id="modalCategory"></div>
+
+    </div>
+
+
+    <div
+      class="modal-description"
+      id="modalDescription">
+    </div>
+
+
+    <button
+      class="apply-btn"
+      onclick="applyForJob()">
+
+      🚀 التقديم للوظيفة
+
+    </button>
+
+
+    <div class="note">
+      سيتم توجيهك إلى صفحة التقديم لإكمال الإجراءات.
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   إعداد OGAds
+   =====================================================
+
+   ضع هنا رابط الـOffer Wall أو رابط التتبع
+   الذي يوفره لك حساب OGAds.
+
+   لا تضع API KEY أو Secret هنا.
+===================================================== */
+
+const OGADS_LINK = "ضع_رابط_OGAds_الرسمي_هنا";
+
+
+/* =====================================================
+   ID اختياري
+   =====================================================
+
+   إذا كان رابط OGAds الذي تستخدمه يحتاج ID
+   ضعه هنا.
+===================================================== */
+
+const OGADS_ID = "ضع_ID_هنا";
+
+
+/* =====================================================
+   الدول
+===================================================== */
+
+const countries = {
+
+  saudi:{
+    name:"السعودية",
+    flag:"🇸🇦"
+  },
+
+  uae:{
+    name:"الإمارات",
+    flag:"🇦🇪"
+  },
+
+  qatar:{
+    name:"قطر",
+    flag:"🇶🇦"
+  },
+
+  kuwait:{
+    name:"الكويت",
+    flag:"🇰🇼"
+  },
+
+  bahrain:{
+    name:"البحرين",
+    flag:"🇧🇭"
+  },
+
+  oman:{
+    name:"عُمان",
+    flag:"🇴🇲"
+  },
+
+  morocco:{
+    name:"المغرب",
+    flag:"🇲🇦"
+  },
+
+  algeria:{
+    name:"الجزائر",
+    flag:"🇩🇿"
+  },
+
+  tunisia:{
+    name:"تونس",
+    flag:"🇹🇳"
+  },
+
+  egypt:{
+    name:"مصر",
+    flag:"🇪🇬"
+  },
+
+  jordan:{
+    name:"الأردن",
+    flag:"🇯🇴"
+  }
+
+};
+
+
+/* =====================================================
+   50 وظيفة
+===================================================== */
+
+const jobs = [
+
+{
+ id:"job001",
+ title:"أستاذ لغة عربية",
+ company:"مؤسسة تعليمية",
+ country:"morocco",
+ city:"الرباط",
+ category:"تعليم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة عمل لأستاذ لغة عربية ضمن مؤسسة تعليمية."
+},
+
+{
+ id:"job002",
+ title:"مهندس برمجيات",
+ company:"شركة تقنية",
+ country:"saudi",
+ city:"الرياض",
+ category:"تقنية",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة لمهندس برمجيات للعمل ضمن فريق تقني."
+},
+
+{
+ id:"job003",
+ title:"مطور مواقع",
+ company:"شركة تقنية",
+ country:"uae",
+ city:"دبي",
+ category:"تقنية",
+ type:"عن بعد",
+ image:"https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة لمطور مواقع للعمل على مشاريع رقمية."
+},
+
+{
+ id:"job004",
+ title:"مهندس مدني",
+ company:"شركة مقاولات",
+ country:"qatar",
+ city:"الدوحة",
+ category:"هندسة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة لمهندس مدني ضمن مشاريع إنشائية."
+},
+
+{
+ id:"job005",
+ title:"مهندس كهرباء",
+ company:"شركة هندسية",
+ country:"saudi",
+ city:"جدة",
+ category:"هندسة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مهندس كهرباء للعمل ضمن فريق هندسي."
+},
+
+{
+ id:"job006",
+ title:"محاسب",
+ company:"شركة خدمات",
+ country:"kuwait",
+ city:"الكويت",
+ category:"محاسبة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=70",
+ description:"مطلوب محاسب لمتابعة الحسابات والتقارير المالية."
+},
+
+{
+ id:"job007",
+ title:"محاسب مالي",
+ company:"شركة تجارية",
+ country:"uae",
+ city:"دبي",
+ category:"محاسبة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة للعمل في مجال المحاسبة والمالية."
+},
+
+{
+ id:"job008",
+ title:"سائق توصيل",
+ company:"شركة خدمات",
+ country:"saudi",
+ city:"الرياض",
+ category:"سائق",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة لسائق توصيل ضمن شركة خدمات."
+},
+
+{
+ id:"job009",
+ title:"سائق خاص",
+ company:"شركة خدمات",
+ country:"qatar",
+ city:"الدوحة",
+ category:"سائق",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة عمل لسائق خاص."
+},
+
+{
+ id:"job010",
+ title:"سائق شاحنة",
+ company:"شركة نقل",
+ country:"uae",
+ city:"أبوظبي",
+ category:"سائق",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة لسائق شاحنة ضمن شركة نقل."
+},
+
+{
+ id:"job011",
+ title:"ممرض",
+ company:"مركز طبي",
+ country:"saudi",
+ city:"جدة",
+ category:"صحة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة عمل في مجال التمريض والرعاية الصحية."
+},
+
+{
+ id:"job012",
+ title:"صيدلي",
+ company:"قطاع صحي",
+ country:"qatar",
+ city:"الدوحة",
+ category:"صحة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة صيدلي ضمن قطاع الرعاية الصحية."
+},
+
+{
+ id:"job013",
+ title:"مساعد طبي",
+ company:"مركز طبي",
+ country:"morocco",
+ city:"الرباط",
+ category:"صحة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مساعد طبي ضمن مركز صحي."
+},
+
+{
+ id:"job014",
+ title:"مدرس رياضيات",
+ company:"مؤسسة تعليمية",
+ country:"saudi",
+ city:"الرياض",
+ category:"تعليم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مدرس رياضيات ضمن مؤسسة تعليمية."
+},
+
+{
+ id:"job015",
+ title:"مدرس لغة إنجليزية",
+ company:"مدرسة خاصة",
+ country:"uae",
+ city:"دبي",
+ category:"تعليم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مدرس لغة إنجليزية."
+},
+
+{
+ id:"job016",
+ title:"معلم ابتدائي",
+ company:"مدرسة",
+ country:"qatar",
+ city:"الدوحة",
+ category:"تعليم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة معلم للمرحلة الابتدائية."
+},
+
+{
+ id:"job017",
+ title:"حارس أمن",
+ company:"شركة أمن",
+ country:"saudi",
+ city:"الرياض",
+ category:"أمن",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة حارس أمن ضمن شركة خدمات أمنية."
+},
+
+{
+ id:"job018",
+ title:"موظف أمن",
+ company:"شركة خدمات",
+ country:"qatar",
+ city:"الدوحة",
+ category:"أمن",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة موظف أمن."
+},
+
+{
+ id:"job019",
+ title:"مشرف أمن",
+ company:"شركة أمن",
+ country:"kuwait",
+ city:"الكويت",
+ category:"أمن",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1591382386627-349b692688ff?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مشرف أمن."
+},
+
+{
+ id:"job020",
+ title:"موظف استقبال فندق",
+ company:"فندق",
+ country:"uae",
+ city:"دبي",
+ category:"مطاعم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة موظف استقبال ضمن فندق."
+},
+
+{
+ id:"job021",
+ title:"موظف استقبال",
+ company:"فندق",
+ country:"qatar",
+ city:"الدوحة",
+ category:"مطاعم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة للعمل في الاستقبال الفندقي."
+},
+
+{
+ id:"job022",
+ title:"عامل مطعم",
+ company:"مطعم",
+ country:"saudi",
+ city:"جدة",
+ category:"مطاعم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة عامل مطعم."
+},
+
+{
+ id:"job023",
+ title:"طباخ",
+ company:"مطعم",
+ country:"kuwait",
+ city:"الكويت",
+ category:"مطاعم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة طباخ ضمن مطعم."
+},
+
+{
+ id:"job024",
+ title:"نادل",
+ company:"فندق",
+ country:"morocco",
+ city:"أكادير",
+ category:"مطاعم",
+ type:"دوام جزئي",
+ image:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة نادل ضمن قطاع الضيافة."
+},
+
+{
+ id:"job025",
+ title:"عامل بناء",
+ company:"شركة مقاولات",
+ country:"oman",
+ city:"مسقط",
+ category:"بناء",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة عامل بناء ضمن شركة مقاولات."
+},
+
+{
+ id:"job026",
+ title:"فني بناء",
+ company:"شركة مقاولات",
+ country:"qatar",
+ city:"الدوحة",
+ category:"بناء",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة فني بناء."
+},
+
+{
+ id:"job027",
+ title:"فني صيانة",
+ company:"شركة خدمات",
+ country:"bahrain",
+ city:"المنامة",
+ category:"بناء",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة فني صيانة."
+},
+
+{
+ id:"job028",
+ title:"مندوب مبيعات",
+ company:"شركة تجارية",
+ country:"saudi",
+ city:"جدة",
+ category:"مبيعات",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مندوب مبيعات."
+},
+
+{
+ id:"job029",
+ title:"موظف مبيعات",
+ company:"شركة تجارية",
+ country:"uae",
+ city:"دبي",
+ category:"مبيعات",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة موظف مبيعات."
+},
+
+{
+ id:"job030",
+ title:"مسؤول مبيعات",
+ company:"شركة خدمات",
+ country:"qatar",
+ city:"الدوحة",
+ category:"مبيعات",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مسؤول مبيعات."
+},
+
+{
+ id:"job031",
+ title:"مشرف مبيعات",
+ company:"شركة تجارية",
+ country:"kuwait",
+ city:"الكويت",
+ category:"مبيعات",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مشرف مبيعات."
+},
+
+{
+ id:"job032",
+ title:"خدمة عملاء",
+ company:"شركة خدمات",
+ country:"saudi",
+ city:"جدة",
+ category:"مبيعات",
+ type:"عن بعد",
+ image:"https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة للعمل في خدمة العملاء."
+},
+
+{
+ id:"job033",
+ title:"دعم عملاء",
+ company:"شركة تقنية",
+ country:"uae",
+ city:"دبي",
+ category:"تقنية",
+ type:"عن بعد",
+ image:"https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة دعم عملاء عن بعد."
+},
+
+{
+ id:"job034",
+ title:"مصمم UI UX",
+ company:"شركة تقنية",
+ country:"uae",
+ city:"دبي",
+ category:"تقنية",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مصمم واجهات وتجربة مستخدم."
+},
+
+{
+ id:"job035",
+ title:"مهندس شبكات",
+ company:"شركة تقنية",
+ country:"kuwait",
+ city:"الكويت",
+ category:"تقنية",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مهندس شبكات."
+},
+
+{
+ id:"job036",
+ title:"مهندس ميكانيك",
+ company:"شركة صناعية",
+ country:"uae",
+ city:"أبوظبي",
+ category:"هندسة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مهندس ميكانيك."
+},
+
+{
+ id:"job037",
+ title:"مهندس مشاريع",
+ company:"شركة مقاولات",
+ country:"oman",
+ city:"مسقط",
+ category:"هندسة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مهندس مشاريع."
+},
+
+{
+ id:"job038",
+ title:"مهندس معماري",
+ company:"شركة تصميم",
+ country:"morocco",
+ city:"الدار البيضاء",
+ category:"هندسة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مهندس معماري."
+},
+
+{
+ id:"job039",
+ title:"مساعد محاسب",
+ company:"شركة خدمات",
+ country:"morocco",
+ city:"الدار البيضاء",
+ category:"محاسبة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مساعد محاسب."
+},
+
+{
+ id:"job040",
+ title:"مدير حسابات",
+ company:"شركة تجارية",
+ country:"uae",
+ city:"دبي",
+ category:"محاسبة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مدير حسابات."
+},
+
+{
+ id:"job041",
+ title:"ممرض / ممرضة",
+ company:"قطاع صحي",
+ country:"uae",
+ city:"أبوظبي",
+ category:"صحة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة ممرض أو ممرضة."
+},
+
+{
+ id:"job042",
+ title:"مدرس لغة عربية",
+ company:"مؤسسة تعليمية",
+ country:"jordan",
+ city:"عمّان",
+ category:"تعليم",
+ type:"دوام جزئي",
+ image:"https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مدرس لغة عربية."
+},
+
+{
+ id:"job043",
+ title:"حارس أمن",
+ company:"شركة خدمات",
+ country:"morocco",
+ city:"مراكش",
+ category:"أمن",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة حارس أمن."
+},
+
+{
+ id:"job044",
+ title:"موظف استقبال",
+ company:"فندق",
+ country:"morocco",
+ city:"مراكش",
+ category:"مطاعم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة موظف استقبال فندقي."
+},
+
+{
+ id:"job045",
+ title:"عامل صيانة",
+ company:"شركة خدمات",
+ country:"uae",
+ city:"أبوظبي",
+ category:"بناء",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة عامل صيانة."
+},
+
+{
+ id:"job046",
+ title:"موظف إداري",
+ company:"شركة تجارية",
+ country:"egypt",
+ city:"القاهرة",
+ category:"مبيعات",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة موظف إداري."
+},
+
+{
+ id:"job047",
+ title:"مساعد إداري",
+ company:"شركة خدمات",
+ country:"morocco",
+ city:"الرباط",
+ category:"مبيعات",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مساعد إداري."
+},
+
+{
+ id:"job048",
+ title:"مطور تطبيقات",
+ company:"شركة تقنية",
+ country:"saudi",
+ city:"الرياض",
+ category:"تقنية",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة مطور تطبيقات."
+},
+
+{
+ id:"job049",
+ title:"فني كهرباء",
+ company:"شركة صيانة",
+ country:"bahrain",
+ city:"المنامة",
+ category:"هندسة",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة فني كهرباء."
+},
+
+{
+ id:"job050",
+ title:"طباخ",
+ company:"مطعم",
+ country:"morocco",
+ city:"أكادير",
+ category:"مطاعم",
+ type:"دوام كامل",
+ image:"https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=70",
+ description:"فرصة طباخ ضمن مطعم."
+}
+
+];
+
+
+/* =====================================================
+   المتغير الحالي
+===================================================== */
+
+let currentJob = null;
+
+
+/* =====================================================
+   حماية النصوص
+===================================================== */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   عرض الوظائف
+===================================================== */
+
+function renderJobs(list){
+
+  const box = document.getElementById("jobList");
+
+  box.innerHTML = "";
+
+  if(!list.length){
+
+    box.innerHTML = `
+      <div class="empty">
+        <h3>🔎 لا توجد وظائف</h3>
+        <p>جرّب اختيار فلتر آخر.</p>
+      </div>
+    `;
+
+    return;
+  }
+
+
+  list.forEach(function(job){
+
+    const card = document.createElement("article");
+
+    card.className = "job";
+
+    card.innerHTML = `
+
+      <img
+        class="job-image"
+        src="${escapeHTML(job.image)}"
+        alt="${escapeHTML(job.title)}"
+        loading="lazy"
+      >
+
+      <div class="job-content">
+
+        <div class="job-top">
+
+          <div>
+
+            <h3>
+              ${escapeHTML(job.title)}
+            </h3>
+
+            <div class="company">
+              ${escapeHTML(job.company)}
+            </div>
+
+          </div>
+
+          <span class="badge-new">
+            جديد
+          </span>
+
+        </div>
+
+
+        <div class="tags">
+
+          <span class="tag">
+            ${countries[job.country].flag}
+            ${countries[job.country].name}
+          </span>
+
+          <span class="tag">
+            📍 ${escapeHTML(job.city)}
+          </span>
+
+          <span class="tag">
+            💼 ${escapeHTML(job.category)}
+          </span>
+
+          <span class="tag">
+            ⏱️ ${escapeHTML(job.type)}
+          </span>
+
+        </div>
+
+
+        <p class="description">
+          ${escapeHTML(job.description)}
+        </p>
+
+
+        <div class="job-footer">
+
+          <span class="date">
+            🆔 ${escapeHTML(job.id)}
+          </span>
+
+          <button
+            class="details"
+            onclick="openJob('${job.id}')">
+
+            التفاصيل
+
+          </button>
+
+        </div>
+
+      </div>
+    `;
+
+    box.appendChild(card);
+
+  });
+
+}
+
+
+/* =====================================================
+   فتح الوظيفة
+===================================================== */
+
+function openJob(id){
+
+  currentJob = jobs.find(function(job){
+    return job.id === id;
+  });
+
+  if(!currentJob){
+    return;
+  }
+
+
+  document.getElementById("modalImage").src =
+    currentJob.image;
+
+  document.getElementById("modalImage").alt =
+    currentJob.title;
+
+  document.getElementById("modalTitle").textContent =
+    currentJob.title;
+
+  document.getElementById("modalCompany").textContent =
+    currentJob.company;
+
+  document.getElementById("modalCountry").textContent =
+    countries[currentJob.country].flag +
+    " " +
+    countries[currentJob.country].name;
+
+  document.getElementById("modalCity").textContent =
+    "📍 " + currentJob.city;
+
+  document.getElementById("modalType").textContent =
+    "⏱️ " + currentJob.type;
+
+  document.getElementById("modalCategory").textContent =
+    "💼 " + currentJob.category;
+
+  document.getElementById("modalDescription").textContent =
+    currentJob.description;
+
+
+  document.getElementById("modal").classList.add("show");
+
+}
+
+
+/* =====================================================
+   التقديم
+===================================================== */
+
+function applyForJob(){
+
+  if(!currentJob){
+    return;
+  }
+
+
+  /*
+    إذا كان لديك رابط OGAds جاهز،
+    ضعه في OGADS_LINK بالأعلى.
+
+    وإذا كان الرابط يحتاج ID،
+    يمكنك استخدام OGADS_ID.
+
+    ملاحظة:
+    صيغة تمرير الـID تختلف حسب رابط/كود OGAds
+    الذي يعطيه لك الحساب، لذلك لا نفترض صيغة من عندنا.
+  */
+
+
+  if(
+    !OGADS_LINK ||
+    OGADS_LINK === "ضع_رابط_OGAds_الرسمي_هنا"
+  ){
+
+    alert(
+      "ضع رابط OGAds الرسمي في المتغير OGADS_LINK أولاً."
+    );
+
+    return;
+  }
+
+
+  /*
+    إذا كان رابطك يحتاج إضافة ID أو job ID،
+    عدّل هذه المنطقة حسب صيغة الرابط التي يوفرها OGAds.
+  */
+
+  let finalURL = OGADS_LINK;
+
+
+  /*
+    مثال فقط:
+
+    finalURL =
+      OGADS_LINK +
+      "?id=" +
+      encodeURIComponent(OGADS_ID) +
+      "&job=" +
+      encodeURIComponent(currentJob.id);
+
+    لا تستخدم هذا المثال إلا إذا كانت
+    صيغة رابط OGAds الخاصة بك تدعم ذلك.
+  */
+
+
+  window.open(
+    finalURL,
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
+
+
+/* =====================================================
+   إغلاق النافذة
+===================================================== */
+
+function closeModal(){
+
+  document
+    .getElementById("modal")
+    .classList.remove("show");
+
+}
+
+
+document
+  .getElementById("modal")
+  .addEventListener("click",function(event){
+
+    if(event.target === this){
+      closeModal();
+    }
+
+  });
+
+
+/* =====================================================
+   الفلاتر
+===================================================== */
+
+function filterJobs(){
+
+  const country =
+    document.getElementById("filterCountry").value;
+
+  const category =
+    document.getElementById("filterCategory").value;
+
+
+  const result = jobs.filter(function(job){
+
+    return (
+
+      (!country || job.country === country)
+
+      &&
+
+      (!category || job.category === category)
+
+    );
+
+  });
+
+
+  renderJobs(result);
+
+}
+
+
+/* =====================================================
+   إعادة ضبط
+===================================================== */
+
+function resetFilters(){
+
+  document.getElementById("filterCountry").value = "";
+
+  document.getElementById("filterCategory").value = "";
+
+  renderJobs(jobs);
+
+}
+
+
+/* =====================================================
+   الانتقال إلى الوظائف
+===================================================== */
+
+function scrollToJobs(){
+
+  document
+    .getElementById("jobsSection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   البداية
+===================================================== */
+
+document.getElementById("totalJobs").textContent =
+  jobs.length;
+
+renderJobs(jobs);
+
+</script>
+
+</body>
+</html>
