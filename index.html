@@ -4,19 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>فرص العمل العربية</title>
+<title>وظائف الآن | فرص العمل</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#f5f7f6;
-    color:#17231f;
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
+    background:#f4f7fb;
+    color:#172033;
     line-height:1.7;
 }
 
@@ -26,323 +39,770 @@ button{
 }
 
 .container{
-    width:min(1150px,94%);
+    width:min(1180px,94%);
     margin:auto;
 }
 
-/* HEADER */
+
+/* =========================
+   COLORS
+========================= */
+
+:root{
+
+    --navy:#101c36;
+    --navy2:#172744;
+
+    --blue:#2563eb;
+    --blue2:#1d4ed8;
+
+    --light-blue:#eff6ff;
+
+    --green:#10b981;
+    --orange:#f59e0b;
+
+    --white:#fff;
+
+    --text:#172033;
+    --muted:#7b8494;
+
+    --border:#e5eaf1;
+
+    --shadow:
+    0 10px 35px rgba(16,28,54,.08);
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 header{
+    height:70px;
+
     background:#fff;
-    border-bottom:1px solid #e5ebe8;
+
+    border-bottom:
+    1px solid var(--border);
+
     position:sticky;
     top:0;
+
     z-index:1000;
 }
 
 .nav{
-    height:65px;
+    height:70px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
 .logo{
     display:flex;
     align-items:center;
-    gap:9px;
-    font-weight:900;
+
+    gap:10px;
+
     font-size:19px;
+    font-weight:950;
 }
 
 .logo-icon{
-    width:40px;
-    height:40px;
-    background:#087f5b;
-    color:white;
-    border-radius:12px;
+    width:43px;
+    height:43px;
+
+    border-radius:13px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue),
+        #60a5fa
+    );
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:21px;
+
+    color:white;
+
+    font-size:22px;
+
+    box-shadow:
+    0 8px 20px
+    rgba(37,99,235,.25);
 }
 
 .back-btn{
     display:none;
+
     border:0;
-    background:#eef4f1;
-    color:#087f5b;
-    padding:8px 14px;
-    border-radius:9px;
+
+    background:
+    var(--light-blue);
+
+    color:
+    var(--blue);
+
+    padding:9px 15px;
+
+    border-radius:10px;
+
     font-weight:900;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
+
     background:
-    radial-gradient(circle at 15% 20%,rgba(255,255,255,.12),transparent 25%),
-    linear-gradient(135deg,#075b43,#087f5b,#0a9c70);
+
+    radial-gradient(
+        circle at 10% 20%,
+        rgba(96,165,250,.20),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 90% 80%,
+        rgba(37,99,235,.20),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #0b1730,
+        #14294d,
+        #1e3a68
+    );
+
     color:white;
-    padding:48px 0 55px;
+
+    padding:
+    65px 0 85px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero-content{
+    max-width:850px;
+
+    margin:auto;
+
     text-align:center;
 }
 
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:
+    7px 14px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.10);
+
+    border:
+    1px solid
+    rgba(255,255,255,.14);
+
+    font-size:11px;
+
+    margin-bottom:17px;
+}
+
 .hero h1{
-    font-size:clamp(30px,5vw,52px);
-    line-height:1.2;
+
+    font-size:
+    clamp(34px,6vw,62px);
+
+    line-height:1.15;
+
     font-weight:950;
 }
 
 .hero h1 span{
-    color:#d7fff0;
+    color:#60a5fa;
 }
 
 .hero p{
-    margin:12px auto 0;
+
     max-width:650px;
+
+    margin:
+    16px auto 0;
+
     font-size:14px;
-    opacity:.93;
+
+    color:
+    #dbe7fa;
 }
 
-/* STATS */
+
+/* =========================
+   STATS
+========================= */
 
 .stats{
-    margin-top:-30px;
+
+    margin-top:-38px;
+
     position:relative;
+
+    z-index:5;
 }
 
 .stats-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:14px;
 }
 
 .stat{
+
     background:white;
-    border-radius:15px;
-    padding:16px;
+
+    border-radius:17px;
+
+    padding:19px;
+
     text-align:center;
-    box-shadow:0 8px 25px rgba(20,40,40,.08);
+
+    box-shadow:
+    var(--shadow);
 }
 
 .stat strong{
+
     display:block;
-    color:#087f5b;
-    font-size:23px;
+
+    font-size:25px;
+
+    color:
+    var(--blue);
+
     font-weight:950;
 }
 
 .stat small{
-    color:#7b8581;
+
     font-size:11px;
+
+    color:
+    var(--muted);
 }
 
-/* MAIN */
+
+/* =========================
+   MAIN
+========================= */
 
 main{
-    padding:50px 0;
+    padding:60px 0;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:25px;
+
+    margin-bottom:28px;
 }
 
 .section-title h2{
-    font-size:28px;
+
+    font-size:29px;
+
     font-weight:950;
 }
 
 .section-title p{
-    color:#78837f;
+
+    color:
+    var(--muted);
+
     font-size:12px;
+
+    margin-top:3px;
 }
 
-/* COUNTRIES */
+
+/* =========================
+   COUNTRIES
+========================= */
 
 .countries{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:15px;
 }
 
 .country{
+
     background:white;
-    border:1px solid #e3eae7;
-    border-radius:17px;
-    padding:19px;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:18px;
+
+    padding:20px;
+
     cursor:pointer;
-    transition:.2s;
-    text-align:right;
+
+    transition:
+    .25s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.country::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    background:
+    var(--light-blue);
+
+    left:-25px;
+    bottom:-30px;
 }
 
 .country:hover{
-    transform:translateY(-4px);
-    border-color:#087f5b;
-    box-shadow:0 14px 30px rgba(20,40,40,.1);
+
+    transform:
+    translateY(-5px);
+
+    border-color:
+    #bcd3ff;
+
+    box-shadow:
+    0 15px 35px
+    rgba(16,28,54,.10);
 }
 
-.flag{
-    font-size:32px;
-    margin-bottom:5px;
+.country-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.country-flag{
+
+    font-size:36px;
+}
+
+.country-count{
+
+    background:
+    var(--light-blue);
+
+    color:
+    var(--blue);
+
+    padding:
+    4px 9px;
+
+    border-radius:20px;
+
+    font-size:9px;
+
+    font-weight:950;
 }
 
 .country h3{
+
+    margin-top:8px;
+
     font-size:17px;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .country p{
-    color:#7b8581;
+
+    color:
+    var(--muted);
+
     font-size:10px;
+
+    position:relative;
+
+    z-index:2;
 }
 
-/* JOB SECTION */
+.country-arrow{
+
+    color:
+    var(--blue);
+
+    font-weight:950;
+
+    margin-top:10px;
+
+    font-size:12px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =========================
+   JOBS SECTION
+========================= */
 
 .jobs-section{
     display:none;
 }
 
 .jobs-header{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    margin-bottom:20px;
+
     gap:15px;
+
+    margin-bottom:25px;
 }
 
-.jobs-title{
+.selected-country{
+
     display:flex;
+
     align-items:center;
-    gap:10px;
+
+    gap:12px;
 }
 
-.jobs-title .flag{
-    margin:0;
+.selected-flag{
+
+    width:55px;
+    height:55px;
+
+    border-radius:16px;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
     font-size:31px;
+
+    box-shadow:
+    var(--shadow);
 }
 
-.jobs-title h2{
+.selected-country h2{
+
     font-size:25px;
+
+    font-weight:950;
 }
 
-.jobs-title p{
+.selected-country p{
+
+    color:
+    var(--muted);
+
     font-size:11px;
-    color:#7a8581;
 }
 
 .jobs-count{
-    background:#e5f8f0;
-    color:#087f5b;
-    border-radius:20px;
-    padding:5px 10px;
+
+    background:
+    var(--navy);
+
+    color:white;
+
+    padding:
+    8px 13px;
+
+    border-radius:10px;
+
     font-size:11px;
+
     font-weight:900;
 }
 
+
+/* =========================
+   JOB GRID
+========================= */
+
 .jobs{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:17px;
 }
 
-/* JOB CARD */
+
+/* =========================
+   JOB CARD
+========================= */
 
 .job{
+
     background:white;
-    border:1px solid #e5ebe8;
-    border-radius:17px;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:18px;
+
     overflow:hidden;
-    transition:.2s;
+
+    transition:
+    .25s;
 }
 
 .job:hover{
-    transform:translateY(-3px);
-    box-shadow:0 13px 30px rgba(20,40,40,.09);
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 15px 35px
+    rgba(16,28,54,.10);
 }
 
-.job-image{
-    height:150px;
-    background:#e8f5ef;
+.job-cover{
+
+    height:145px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    font-size:65px;
+
+    font-size:67px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe
+    );
+
+    position:relative;
+}
+
+.job-cover::after{
+
+    content:"فرصة عمل";
+
+    position:absolute;
+
+    right:13px;
+    top:12px;
+
+    background:
+    rgba(255,255,255,.9);
+
+    color:
+    var(--blue);
+
+    padding:
+    4px 8px;
+
+    border-radius:7px;
+
+    font-size:9px;
+
+    font-weight:950;
 }
 
 .job-body{
-    padding:17px;
+    padding:18px;
 }
 
-.job-top{
+.job-heading{
+
     display:flex;
+
     justify-content:space-between;
+
     gap:10px;
 }
 
 .job h3{
+
     font-size:17px;
+
     line-height:1.4;
 }
 
 .company{
-    color:#7c8783;
-    font-size:11px;
+
+    color:
+    var(--muted);
+
+    font-size:10px;
+
     margin-top:3px;
 }
 
 .available{
-    background:#e7f8f0;
-    color:#087f5b;
+
+    color:
+    #059669;
+
+    background:
+    #ecfdf5;
+
     border-radius:20px;
-    padding:4px 8px;
-    height:max-content;
+
+    padding:
+    4px 8px;
+
     font-size:9px;
+
     font-weight:900;
+
+    height:max-content;
+
     white-space:nowrap;
 }
 
 .tags{
+
     display:flex;
+
     flex-wrap:wrap;
-    gap:5px;
-    margin:12px 0;
+
+    gap:6px;
+
+    margin:
+    13px 0;
 }
 
 .tag{
-    background:#f1f4f3;
-    color:#68736f;
-    border-radius:7px;
-    padding:4px 7px;
+
+    background:
+    #f5f7fa;
+
+    color:
+    #667085;
+
+    border-radius:8px;
+
+    padding:
+    5px 8px;
+
     font-size:9px;
 }
 
 .job-description{
-    color:#697572;
+
+    color:
+    #697386;
+
     font-size:11px;
-    margin-bottom:14px;
+
+    margin-bottom:15px;
 }
 
-.apply{
+.apply-btn{
+
     width:100%;
+
     border:0;
-    background:#087f5b;
+
     color:white;
-    padding:11px;
-    border-radius:9px;
-    font-weight:900;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue),
+        var(--blue2)
+    );
+
+    padding:
+    12px;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:950;
+
+    box-shadow:
+    0 7px 16px
+    rgba(37,99,235,.18);
 }
 
-/* MODAL */
+
+/* =========================
+   MODAL
+========================= */
 
 .modal{
+
     position:fixed;
+
     inset:0;
-    background:rgba(0,0,0,.58);
+
+    background:
+    rgba(8,15,30,.68);
+
     display:none;
+
     align-items:center;
+
     justify-content:center;
+
     padding:15px;
+
     z-index:5000;
 }
 
@@ -351,136 +811,264 @@ main{
 }
 
 .modal-box{
-    width:min(570px,100%);
-    max-height:90vh;
+
+    width:
+    min(590px,100%);
+
+    max-height:91vh;
+
     overflow:auto;
+
     background:white;
-    border-radius:20px;
-    padding:25px;
+
+    border-radius:22px;
+
+    padding:24px;
+
     position:relative;
 }
 
 .close{
+
     position:absolute;
+
     left:15px;
-    top:13px;
-    width:35px;
-    height:35px;
+    top:15px;
+
+    width:36px;
+    height:36px;
+
     border:0;
+
     border-radius:50%;
-    background:#eef2f0;
+
+    background:#f1f4f8;
+
+    color:#4b5563;
+
     font-size:20px;
+
+    z-index:3;
 }
 
 .modal-image{
-    height:130px;
-    background:#e8f5ef;
-    border-radius:15px;
+
+    height:145px;
+
+    border-radius:16px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe
+    );
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    font-size:60px;
-    margin-bottom:17px;
+
+    font-size:65px;
+
+    margin-bottom:18px;
 }
 
 .modal-box h2{
-    font-size:24px;
-    padding-left:35px;
+
+    font-size:25px;
+
+    padding-left:40px;
 }
 
 .modal-company{
-    color:#78837f;
-    font-size:12px;
-    margin:4px 0 17px;
+
+    color:
+    var(--muted);
+
+    font-size:11px;
+
+    margin:
+    3px 0 17px;
 }
 
 .modal-grid{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+    1fr 1fr;
+
     gap:8px;
+
     margin-bottom:17px;
 }
 
 .modal-item{
-    background:#f3f6f5;
-    padding:10px;
-    border-radius:9px;
+
+    background:
+    #f5f7fa;
+
+    padding:11px;
+
+    border-radius:10px;
+
     font-size:11px;
 }
 
 .modal-description{
-    color:#606c68;
+
+    color:
+    #667085;
+
     font-size:12px;
+
     margin-bottom:18px;
 }
 
-.apply-main{
+.modal-apply{
+
     width:100%;
+
     border:0;
-    background:#087f5b;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue),
+        var(--blue2)
+    );
+
     color:white;
+
     padding:14px;
-    border-radius:10px;
-    font-weight:950;
+
+    border-radius:11px;
+
     font-size:14px;
+
+    font-weight:950;
 }
 
-/* OFFER */
 
-.offer-box{
+/* =========================
+   OFFER STEP
+========================= */
+
+.offer-step{
+
     display:none;
+
     text-align:center;
+
+    padding-top:5px;
 }
 
-.offer-box h2{
+.offer-icon{
+
+    width:65px;
+    height:65px;
+
+    border-radius:18px;
+
+    background:
+    var(--light-blue);
+
+    color:
+    var(--blue);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+
+    margin:
+    0 auto 13px;
+}
+
+.offer-step h2{
+
     padding:0;
-    margin-bottom:8px;
+
+    font-size:22px;
+
+    margin-bottom:5px;
 }
 
-.offer-box p{
-    color:#68736f;
+.offer-step p{
+
+    color:
+    var(--muted);
+
     font-size:12px;
+
     margin-bottom:18px;
 }
 
-.offer-button{
+.offer-btn{
+
     width:100%;
+
     border:0;
-    background:#087f5b;
-    color:#fff;
+
+    background:
+    var(--blue);
+
+    color:white;
+
     padding:14px;
-    border-radius:10px;
+
+    border-radius:11px;
+
     font-weight:950;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    background:#13201b;
-    color:#aeb9b5;
+
+    background:
+    var(--navy);
+
+    color:
+    #9eabc0;
+
     text-align:center;
-    padding:30px 20px;
+
+    padding:
+    34px 20px;
+
     font-size:11px;
 }
 
 footer strong{
-    color:#fff;
+    color:white;
 }
 
-/* MOBILE */
 
-@media(max-width:900px){
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
 
     .countries{
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:
+        repeat(3,1fr);
     }
-
 }
 
 @media(max-width:700px){
 
     .countries{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+        repeat(2,1fr);
     }
 
     .jobs{
@@ -504,26 +1092,54 @@ footer strong{
         grid-template-columns:1fr;
     }
 
+    .hero{
+        padding:
+        48px 0 70px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
     .modal-grid{
         grid-template-columns:1fr;
     }
 
 }
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
 <div class="container nav">
 
 <div class="logo">
-<div class="logo-icon">🌍</div>
-<span>فرص العمل العربية</span>
+
+<div class="logo-icon">
+💼
 </div>
 
-<button class="back-btn" id="backBtn" onclick="showCountries()">
+<span>
+وظائف الآن
+</span>
+
+</div>
+
+
+<button
+class="back-btn"
+id="backBtn"
+onclick="showCountries()"
+>
 ← الدول
 </button>
 
@@ -532,16 +1148,27 @@ footer strong{
 </header>
 
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-<div class="container">
+<div class="container hero-content">
+
+<div class="hero-badge">
+✨ فرص عمل جديدة
+</div>
 
 <h1>
-اعثر على <span>فرصتك القادمة</span>
+ابدأ رحلتك نحو
+<span>وظيفة أفضل</span>
 </h1>
 
 <p>
-اختر الدولة وشاهد أحدث فرص العمل المتاحة في مختلف المجالات.
+اختر دولتك واكتشف فرص العمل المتاحة في مجالات متعددة
+مثل التوصيل، المستودعات، المطاعم، الخدمات، النقل وغيرها.
 </p>
 
 </div>
@@ -549,23 +1176,51 @@ footer strong{
 </section>
 
 
+
+<!-- =========================
+     STATS
+========================= -->
+
 <section class="stats">
 
 <div class="container stats-grid">
 
 <div class="stat">
-<strong>11</strong>
-<small>دولة عربية</small>
+
+<strong>
+11
+</strong>
+
+<small>
+دولة
+</small>
+
 </div>
 
-<div class="stat">
-<strong>1100+</strong>
-<small>فرصة عمل</small>
-</div>
 
 <div class="stat">
-<strong>24/7</strong>
-<small>الوصول إلى الوظائف</small>
+
+<strong>
+1100+
+</strong>
+
+<small>
+فرصة عمل
+</small>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+24/7
+</strong>
+
+<small>
+متاح دائمًا
+</small>
+
 </div>
 
 </div>
@@ -573,18 +1228,27 @@ footer strong{
 </section>
 
 
+
+<!-- =========================
+     MAIN
+========================= -->
+
 <main>
 
 <div class="container">
 
 
-<!-- COUNTRIES -->
+<!-- =========================
+     COUNTRIES
+========================= -->
 
 <section id="countriesSection">
 
 <div class="section-title">
 
-<h2>🌍 اختر الدولة</h2>
+<h2>
+🌍 اختر دولتك
+</h2>
 
 <p>
 اختر الدولة لمشاهدة الوظائف المتاحة
@@ -592,83 +1256,369 @@ footer strong{
 
 </div>
 
+
 <div class="countries">
 
 
-<div class="country" onclick="showJobs('saudi')">
-<div class="flag">🇸🇦</div>
-<h3>السعودية</h3>
-<p>الرياض · جدة · الدمام</p>
+<div
+class="country"
+onclick="showJobs('saudi')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇸🇦
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+السعودية
+</h3>
+
+<p>
+الرياض · جدة · الدمام
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('uae')">
-<div class="flag">🇦🇪</div>
-<h3>الإمارات</h3>
-<p>دبي · أبوظبي · الشارقة</p>
+
+<div
+class="country"
+onclick="showJobs('uae')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇦🇪
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+الإمارات
+</h3>
+
+<p>
+دبي · أبوظبي · الشارقة
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('qatar')">
-<div class="flag">🇶🇦</div>
-<h3>قطر</h3>
-<p>الدوحة · الريان · الوكرة</p>
+
+<div
+class="country"
+onclick="showJobs('qatar')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇶🇦
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+قطر
+</h3>
+
+<p>
+الدوحة · الريان · الوكرة
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('kuwait')">
-<div class="flag">🇰🇼</div>
-<h3>الكويت</h3>
-<p>الكويت · حولي · الفروانية</p>
+
+<div
+class="country"
+onclick="showJobs('kuwait')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇰🇼
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+الكويت
+</h3>
+
+<p>
+الكويت · حولي · الفروانية
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('bahrain')">
-<div class="flag">🇧🇭</div>
-<h3>البحرين</h3>
-<p>المنامة · المحرق · الرفاع</p>
+
+<div
+class="country"
+onclick="showJobs('bahrain')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇧🇭
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+البحرين
+</h3>
+
+<p>
+المنامة · المحرق · الرفاع
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('oman')">
-<div class="flag">🇴🇲</div>
-<h3>عُمان</h3>
-<p>مسقط · صلالة · صحار</p>
+
+<div
+class="country"
+onclick="showJobs('oman')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇴🇲
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+عُمان
+</h3>
+
+<p>
+مسقط · صلالة · صحار
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('morocco')">
-<div class="flag">🇲🇦</div>
-<h3>المغرب</h3>
-<p>الدار البيضاء · الرباط · طنجة</p>
+
+<div
+class="country"
+onclick="showJobs('morocco')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇲🇦
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+المغرب
+</h3>
+
+<p>
+الدار البيضاء · الرباط · طنجة
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('algeria')">
-<div class="flag">🇩🇿</div>
-<h3>الجزائر</h3>
-<p>الجزائر · وهران · قسنطينة</p>
+
+<div
+class="country"
+onclick="showJobs('algeria')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇩🇿
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+الجزائر
+</h3>
+
+<p>
+الجزائر · وهران · قسنطينة
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('tunisia')">
-<div class="flag">🇹🇳</div>
-<h3>تونس</h3>
-<p>تونس · صفاقس · سوسة</p>
+
+<div
+class="country"
+onclick="showJobs('tunisia')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇹🇳
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+تونس
+</h3>
+
+<p>
+تونس · صفاقس · سوسة
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('egypt')">
-<div class="flag">🇪🇬</div>
-<h3>مصر</h3>
-<p>القاهرة · الإسكندرية · الجيزة</p>
+
+<div
+class="country"
+onclick="showJobs('egypt')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇪🇬
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+مصر
+</h3>
+
+<p>
+القاهرة · الجيزة · الإسكندرية
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
-<div class="country" onclick="showJobs('jordan')">
-<div class="flag">🇯🇴</div>
-<h3>الأردن</h3>
-<p>عمّان · الزرقاء · إربد</p>
+
+<div
+class="country"
+onclick="showJobs('jordan')"
+>
+
+<div class="country-top">
+
+<div class="country-flag">
+🇯🇴
+</div>
+
+<div class="country-count">
+100 وظيفة
+</div>
+
+</div>
+
+<h3>
+الأردن
+</h3>
+
+<p>
+عمّان · الزرقاء · إربد
+</p>
+
+<div class="country-arrow">
+مشاهدة الوظائف ←
+</div>
+
 </div>
 
 
@@ -677,22 +1627,41 @@ footer strong{
 </section>
 
 
-<!-- JOBS -->
 
-<section class="jobs-section" id="jobsSection">
+<!-- =========================
+     JOBS
+========================= -->
+
+<section
+class="jobs-section"
+id="jobsSection"
+>
 
 <div class="jobs-header">
 
-<div class="jobs-title">
+<div class="selected-country">
 
-<div class="flag" id="selectedFlag"></div>
+<div
+class="selected-flag"
+id="selectedFlag"
+>
+🇸🇦
+</div>
 
 <div>
-<h2 id="selectedCountry"></h2>
-<p>100 فرصة عمل متاحة</p>
+
+<h2 id="selectedCountry">
+وظائف السعودية
+</h2>
+
+<p>
+100 فرصة عمل
+</p>
+
 </div>
 
 </div>
+
 
 <div class="jobs-count">
 100 وظيفة
@@ -700,7 +1669,12 @@ footer strong{
 
 </div>
 
-<div class="jobs" id="jobList"></div>
+
+<div
+class="jobs"
+id="jobList"
+></div>
+
 
 </section>
 
@@ -710,9 +1684,16 @@ footer strong{
 </main>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-<strong>🌍 فرص العمل العربية</strong>
+<strong>
+💼 وظائف الآن
+</strong>
 
 <br><br>
 
@@ -720,104 +1701,163 @@ footer strong{
 
 <br><br>
 
-© 2026
+© 2026 جميع الحقوق محفوظة
 
 </footer>
 
 
-<!-- MODAL -->
 
-<div class="modal" id="modal">
+<!-- =========================
+     MODAL
+========================= -->
+
+<div
+class="modal"
+id="modal"
+>
 
 <div class="modal-box">
 
-<button class="close" onclick="closeModal()">×</button>
+<button
+class="close"
+onclick="closeModal()"
+>
+×
+</button>
 
-<div class="modal-image" id="modalImage">
+
+<div
+class="modal-image"
+id="modalImage"
+>
 👷
 </div>
+
+
+<div id="jobDetails">
 
 <h2 id="modalTitle">
 الوظيفة
 </h2>
 
-<div class="modal-company" id="modalCompany"></div>
+<div
+class="modal-company"
+id="modalCompany"
+></div>
+
 
 <div class="modal-grid">
 
-<div class="modal-item" id="modalCountry"></div>
+<div
+class="modal-item"
+id="modalCountry"
+></div>
 
-<div class="modal-item" id="modalCity"></div>
+<div
+class="modal-item"
+id="modalCity"
+></div>
 
-<div class="modal-item" id="modalType"></div>
+<div
+class="modal-item"
+id="modalType"
+></div>
 
-<div class="modal-item" id="modalCategory"></div>
+<div
+class="modal-item"
+id="modalCategory"
+></div>
 
 </div>
 
-<div class="modal-description" id="modalDescription"></div>
 
-<button class="apply-main" onclick="showOffer()">
+<div
+class="modal-description"
+id="modalDescription"
+></div>
+
+
+<button
+class="modal-apply"
+onclick="showOffer()"
+>
 تقدم للوظيفة
 </button>
 
+</div>
 
-<!-- OGADS -->
 
-<div class="offer-box" id="offerBox">
+
+<!-- =========================
+     OGADS STEP
+========================= -->
+
+<div
+class="offer-step"
+id="offerStep"
+>
+
+<div class="offer-icon">
+🚀
+</div>
 
 <h2>
-🚀 إكمال التقديم
+أكمل طلب التقديم
 </h2>
 
 <p>
-اضغط على الزر التالي لإكمال إجراءات التقديم.
+اضغط على الزر التالي للانتقال إلى صفحة إكمال الإجراءات.
 </p>
 
-<button class="offer-button" onclick="openOGAds()">
-متابعة
+<button
+class="offer-btn"
+onclick="openOGAds()"
+>
+متابعة التقديم
 </button>
 
 </div>
 
+
 </div>
 
 </div>
+
 
 
 <script>
 
+
 /* =====================================================
-   إعداد OGAds
+   OGADS
 ===================================================== */
 
 /*
-ضع هنا رابط عرض OGAds الخاص بك.
+ضع رابط عرض OGAds هنا.
 
 مثال:
 
-const OGADS_LINK = "ضع_رابط_العرض_هنا";
+const OGADS_LINK =
+"https://your-ogads-offer-link";
 
-أو إذا كان نظامك يحتاج ID:
-ضع الـ ID في المتغير التالي.
-*/
-
-const OGADS_ID = "PUT_YOUR_OGADS_ID_HERE";
-
-
-/*
-إذا كان لديك رابط مباشر من OGAds
-يمكنك وضعه هنا.
-
-اتركه فارغاً إذا كنت ستبني الرابط
-بطريقة مختلفة.
 */
 
 const OGADS_LINK = "";
 
 
+/*
+إذا كان عندك ID فقط:
+
+ضعه هنا.
+
+*/
+
+const OGADS_ID =
+"PUT_YOUR_OGADS_ID_HERE";
+
+
 /* =====================================================
-   الدول
+   COUNTRIES
 ===================================================== */
 
 const countries = {
@@ -825,14 +1865,20 @@ const countries = {
 saudi:{
 name:"السعودية",
 flag:"🇸🇦",
-cities:["الرياض","جدة","الدمام","مكة","المدينة المنورة","الخبر","أبها"],
+cities:[
+"الرياض",
+"جدة",
+"الدمام",
+"مكة",
+"المدينة المنورة",
+"الخبر",
+"أبها"
+],
 companies:[
-"شركة أغذية",
+"شركة خدمات",
 "شركة توزيع",
 "شركة نقل",
-"شركة خدمات",
-"شركة تجارية",
-"شركة مقاولات",
+"شركة أغذية",
 "شركة لوجستية",
 "شركة تشغيل"
 ]
@@ -841,36 +1887,50 @@ companies:[
 uae:{
 name:"الإمارات",
 flag:"🇦🇪",
-cities:["دبي","أبوظبي","الشارقة","عجمان","رأس الخيمة"],
+cities:[
+"دبي",
+"أبوظبي",
+"الشارقة",
+"عجمان",
+"رأس الخيمة"
+],
 companies:[
 "شركة خدمات",
-"شركة لوجستية",
-"شركة تجارية",
-"شركة مطاعم",
+"شركة توزيع",
 "شركة نقل",
-"شركة تشغيل",
-"شركة توزيع"
+"شركة لوجستية",
+"شركة تشغيل"
 ]
 },
 
 qatar:{
 name:"قطر",
 flag:"🇶🇦",
-cities:["الدوحة","الريان","الوكرة","الخور"],
+cities:[
+"الدوحة",
+"الريان",
+"الوكرة",
+"الخور"
+],
 companies:[
 "شركة خدمات",
 "شركة مقاولات",
-"شركة لوجستية",
 "شركة أغذية",
-"شركة تشغيل",
-"شركة نقل"
+"شركة نقل",
+"شركة تشغيل"
 ]
 },
 
 kuwait:{
 name:"الكويت",
 flag:"🇰🇼",
-cities:["الكويت","حولي","الفروانية","الجهراء","الأحمدي"],
+cities:[
+"الكويت",
+"حولي",
+"الفروانية",
+"الجهراء",
+"الأحمدي"
+],
 companies:[
 "شركة خدمات",
 "شركة توزيع",
@@ -883,10 +1943,14 @@ companies:[
 bahrain:{
 name:"البحرين",
 flag:"🇧🇭",
-cities:["المنامة","المحرق","الرفاع","مدينة حمد"],
+cities:[
+"المنامة",
+"المحرق",
+"الرفاع",
+"مدينة حمد"
+],
 companies:[
 "شركة خدمات",
-"شركة مطاعم",
 "شركة توزيع",
 "شركة نقل",
 "شركة تشغيل"
@@ -896,7 +1960,13 @@ companies:[
 oman:{
 name:"عُمان",
 flag:"🇴🇲",
-cities:["مسقط","صلالة","صحار","نزوى","صور"],
+cities:[
+"مسقط",
+"صلالة",
+"صحار",
+"نزوى",
+"صور"
+],
 companies:[
 "شركة خدمات",
 "شركة مقاولات",
@@ -909,7 +1979,14 @@ companies:[
 morocco:{
 name:"المغرب",
 flag:"🇲🇦",
-cities:["الدار البيضاء","الرباط","طنجة","مراكش","فاس","أكادير"],
+cities:[
+"الدار البيضاء",
+"الرباط",
+"طنجة",
+"مراكش",
+"فاس",
+"أكادير"
+],
 companies:[
 "شركة توزيع",
 "شركة خدمات",
@@ -923,7 +2000,13 @@ companies:[
 algeria:{
 name:"الجزائر",
 flag:"🇩🇿",
-cities:["الجزائر","وهران","قسنطينة","عنابة","سطيف"],
+cities:[
+"الجزائر",
+"وهران",
+"قسنطينة",
+"عنابة",
+"سطيف"
+],
 companies:[
 "شركة خدمات",
 "شركة توزيع",
@@ -936,7 +2019,13 @@ companies:[
 tunisia:{
 name:"تونس",
 flag:"🇹🇳",
-cities:["تونس","صفاقس","سوسة","بنزرت","قابس"],
+cities:[
+"تونس",
+"صفاقس",
+"سوسة",
+"بنزرت",
+"قابس"
+],
 companies:[
 "شركة خدمات",
 "شركة توزيع",
@@ -949,7 +2038,13 @@ companies:[
 egypt:{
 name:"مصر",
 flag:"🇪🇬",
-cities:["القاهرة","الجيزة","الإسكندرية","المنصورة","أسيوط"],
+cities:[
+"القاهرة",
+"الجيزة",
+"الإسكندرية",
+"المنصورة",
+"أسيوط"
+],
 companies:[
 "شركة خدمات",
 "شركة توزيع",
@@ -962,7 +2057,12 @@ companies:[
 jordan:{
 name:"الأردن",
 flag:"🇯🇴",
-cities:["عمّان","الزرقاء","إربد","العقبة"],
+cities:[
+"عمّان",
+"الزرقاء",
+"إربد",
+"العقبة"
+],
 companies:[
 "شركة خدمات",
 "شركة توزيع",
@@ -976,127 +2076,127 @@ companies:[
 
 
 /* =====================================================
-   الوظائف
+   JOB TYPES
 ===================================================== */
 
 const jobTypes = [
 
 {
-name:"عامل مستودع",
+title:"عامل مستودع",
 icon:"📦",
 category:"مستودعات"
 },
 
 {
-name:"عامل إنتاج",
+title:"عامل إنتاج",
 icon:"🏭",
 category:"إنتاج"
 },
 
 {
-name:"عامل تعبئة وتغليف",
+title:"عامل تعبئة وتغليف",
 icon:"📦",
-category:"تعبئة"
+category:"تعبئة وتغليف"
 },
 
 {
-name:"سائق توصيل",
+title:"سائق توصيل",
 icon:"🚚",
 category:"توصيل"
 },
 
 {
-name:"سائق شاحنة",
+title:"سائق شاحنة",
 icon:"🚛",
 category:"نقل"
 },
 
 {
-name:"عامل تحميل وتنزيل",
+title:"عامل تحميل وتنزيل",
 icon:"💪",
 category:"مستودعات"
 },
 
 {
-name:"عامل نظافة",
+title:"عامل نظافة",
 icon:"🧹",
 category:"نظافة"
 },
 
 {
-name:"حارس أمن",
+title:"حارس أمن",
 icon:"🛡️",
 category:"أمن"
 },
 
 {
-name:"عامل مطعم",
+title:"عامل مطعم",
 icon:"🍔",
 category:"مطاعم"
 },
 
 {
-name:"مساعد مطبخ",
+title:"مساعد مطبخ",
 icon:"👨‍🍳",
 category:"مطاعم"
 },
 
 {
-name:"نادل",
+title:"نادل",
 icon:"🍽️",
 category:"مطاعم"
 },
 
 {
-name:"موظف استقبال",
+title:"موظف استقبال",
 icon:"🧑‍💼",
 category:"خدمات"
 },
 
 {
-name:"عامل صيانة",
+title:"عامل صيانة",
 icon:"🔧",
 category:"صيانة"
 },
 
 {
-name:"فني تكييف",
+title:"فني تكييف",
 icon:"❄️",
 category:"صيانة"
 },
 
 {
-name:"عامل بناء",
+title:"عامل بناء",
 icon:"👷",
 category:"بناء"
 },
 
 {
-name:"مساعد بناء",
+title:"مساعد بناء",
 icon:"🏗️",
 category:"بناء"
 },
 
 {
-name:"عامل مغسلة",
+title:"عامل مغسلة",
 icon:"🧺",
 category:"خدمات"
 },
 
 {
-name:"موظف خدمة عملاء",
+title:"خدمة عملاء",
 icon:"☎️",
 category:"خدمة عملاء"
 },
 
 {
-name:"موظف مبيعات",
+title:"موظف مبيعات",
 icon:"🛒",
 category:"مبيعات"
 },
 
 {
-name:"مندوب توصيل",
+title:"مندوب توصيل",
 icon:"🛵",
 category:"توصيل"
 }
@@ -1105,394 +2205,483 @@ category:"توصيل"
 
 
 /* =====================================================
-   إنشاء 100 وظيفة لكل دولة
+   GENERATE 100 JOBS
 ===================================================== */
 
 function generateJobs(countryKey){
 
-const country = countries[countryKey];
+    const country =
+    countries[countryKey];
 
-const result = [];
+    const jobs = [];
 
-for(let i=0;i<100;i++){
+    for(let i=0;i<100;i++){
 
-const job = jobTypes[i % jobTypes.length];
+        const type =
+        jobTypes[i % jobTypes.length];
 
-const city =
-country.cities[i % country.cities.length];
+        const city =
+        country.cities[
+            i % country.cities.length
+        ];
 
-const company =
-country.companies[i % country.companies.length];
+        const company =
+        country.companies[
+            i % country.companies.length
+        ];
 
-const type =
-i % 7 === 0
-? "دوام جزئي"
-: "دوام كامل";
+        const workType =
+        i % 8 === 0
+        ?
+        "دوام جزئي"
+        :
+        "دوام كامل";
 
-result.push({
+        jobs.push({
 
-id:countryKey+"_"+(i+1),
+            id:
+            countryKey+
+            "-" +
+            (i+1),
 
-title:job.name,
+            title:
+            type.title,
 
-icon:job.icon,
+            icon:
+            type.icon,
 
-category:job.category,
+            category:
+            type.category,
 
-city:city,
+            city:
+            city,
 
-company:company,
+            company:
+            company,
 
-type:type,
+            type:
+            workType,
 
-country:countryKey,
+            country:
+            countryKey,
 
-description:
-"فرصة عمل متاحة في "+country.name+
-". يرجى مراجعة شروط الوظيفة والتأكد من معلومات الجهة الناشرة قبل التقديم."
+            description:
+            "فرصة عمل متاحة في "+
+            country.name+
+            ". راجع شروط الوظيفة ومعلومات الجهة الناشرة قبل التقديم."
 
-});
+        });
 
-}
+    }
 
-return result;
-
+    return jobs;
 }
 
 
 /* =====================================================
-   تخزين الوظائف
+   CREATE DATA
 ===================================================== */
 
 const jobsData = {};
 
-Object.keys(countries).forEach(function(country){
+Object.keys(countries).forEach(
+function(country){
 
-jobsData[country] =
-generateJobs(country);
+    jobsData[country] =
+    generateJobs(country);
 
 });
 
 
 /* =====================================================
-   عرض الدول
+   SHOW COUNTRIES
 ===================================================== */
 
 function showCountries(){
 
-document.getElementById("countriesSection").style.display="block";
+    document
+    .getElementById("countriesSection")
+    .style.display="block";
 
-document.getElementById("jobsSection").style.display="none";
+    document
+    .getElementById("jobsSection")
+    .style.display="none";
 
-document.getElementById("backBtn").style.display="none";
+    document
+    .getElementById("backBtn")
+    .style.display="none";
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
 
 /* =====================================================
-   عرض وظائف دولة
+   SHOW JOBS
 ===================================================== */
 
 function showJobs(countryKey){
 
-const country =
-countries[countryKey];
+    const country =
+    countries[countryKey];
 
-const jobs =
-jobsData[countryKey];
+    const jobs =
+    jobsData[countryKey];
 
-document.getElementById("countriesSection").style.display="none";
+    document
+    .getElementById("countriesSection")
+    .style.display="none";
 
-document.getElementById("jobsSection").style.display="block";
+    document
+    .getElementById("jobsSection")
+    .style.display="block";
 
-document.getElementById("backBtn").style.display="block";
+    document
+    .getElementById("backBtn")
+    .style.display="block";
 
-document.getElementById("selectedFlag").textContent =
-country.flag;
 
-document.getElementById("selectedCountry").textContent =
-"وظائف "+country.name;
+    document
+    .getElementById("selectedFlag")
+    .textContent =
+    country.flag;
 
-renderJobs(jobs);
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+    document
+    .getElementById("selectedCountry")
+    .textContent =
+    "وظائف "+country.name;
+
+
+    renderJobs(jobs);
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
 
 /* =====================================================
-   حماية HTML
+   ESCAPE
 ===================================================== */
 
 function escapeHTML(value){
 
-return String(value)
+    return String(value)
 
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
 
 /* =====================================================
-   عرض الوظائف
+   RENDER JOBS
 ===================================================== */
 
 function renderJobs(jobs){
 
-const box =
-document.getElementById("jobList");
+    const box =
+    document.getElementById("jobList");
 
-box.innerHTML="";
-
-jobs.forEach(function(job){
-
-const card =
-document.createElement("article");
-
-card.className="job";
-
-card.innerHTML = `
-
-<div class="job-image">
-
-${job.icon}
-
-</div>
-
-<div class="job-body">
-
-<div class="job-top">
-
-<div>
-
-<h3>
-${escapeHTML(job.title)}
-</h3>
-
-<div class="company">
-${escapeHTML(job.company)}
-</div>
-
-</div>
-
-<div class="available">
-متاح
-</div>
-
-</div>
+    box.innerHTML="";
 
 
-<div class="tags">
+    jobs.forEach(function(job){
 
-<span class="tag">
-📍 ${escapeHTML(job.city)}
-</span>
+        const card =
+        document.createElement("article");
 
-<span class="tag">
-💼 ${escapeHTML(job.category)}
-</span>
-
-<span class="tag">
-⏱️ ${escapeHTML(job.type)}
-</span>
-
-</div>
+        card.className="job";
 
 
-<p class="job-description">
+        card.innerHTML = `
 
-${escapeHTML(job.description)}
+        <div class="job-cover">
 
-</p>
+            ${job.icon}
+
+        </div>
 
 
-<button
-class="apply"
-onclick='openJob(${JSON.stringify(job).replace(/'/g,"&#39;")})'
->
+        <div class="job-body">
 
-تقدم للوظيفة
 
-</button>
+            <div class="job-heading">
 
-</div>
+                <div>
 
-`;
+                    <h3>
+                        ${escapeHTML(job.title)}
+                    </h3>
 
-box.appendChild(card);
+                    <div class="company">
+                        ${escapeHTML(job.company)}
+                    </div>
 
-});
+                </div>
+
+                <div class="available">
+                    متاح
+                </div>
+
+            </div>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    📍 ${escapeHTML(job.city)}
+                </span>
+
+                <span class="tag">
+                    💼 ${escapeHTML(job.category)}
+                </span>
+
+                <span class="tag">
+                    ⏱️ ${escapeHTML(job.type)}
+                </span>
+
+            </div>
+
+
+            <p class="job-description">
+
+                ${escapeHTML(job.description)}
+
+            </p>
+
+
+            <button
+                class="apply-btn"
+                onclick="openJobById('${job.id}')"
+            >
+
+                تقدم للوظيفة
+
+            </button>
+
+        </div>
+
+        `;
+
+
+        box.appendChild(card);
+
+    });
 
 }
 
 
 /* =====================================================
-   الوظيفة الحالية
+   FIND JOB
+===================================================== */
+
+function findJobById(id){
+
+    for(
+        const countryKey
+        of Object.keys(jobsData)
+    ){
+
+        const job =
+        jobsData[countryKey]
+        .find(function(item){
+
+            return item.id === id;
+
+        });
+
+        if(job){
+            return job;
+        }
+
+    }
+
+    return null;
+}
+
+
+/* =====================================================
+   CURRENT JOB
 ===================================================== */
 
 let currentJob = null;
 
 
 /* =====================================================
-   فتح تفاصيل الوظيفة
+   OPEN JOB
 ===================================================== */
 
-function openJob(job){
+function openJobById(id){
 
-currentJob = job;
+    const job =
+    findJobById(id);
 
-document.getElementById("modalImage").textContent =
-job.icon;
+    if(!job){
+        return;
+    }
 
-document.getElementById("modalTitle").textContent =
-job.title;
-
-document.getElementById("modalCompany").textContent =
-job.company;
-
-document.getElementById("modalCountry").textContent =
-countries[job.country].flag+
-" "+
-countries[job.country].name;
-
-document.getElementById("modalCity").textContent =
-"📍 "+
-job.city;
-
-document.getElementById("modalType").textContent =
-"⏱️ "+
-job.type;
-
-document.getElementById("modalCategory").textContent =
-"💼 "+
-job.category;
-
-document.getElementById("modalDescription").textContent =
-job.description;
+    currentJob = job;
 
 
-/*
-إخفاء قسم OGAds
-*/
-
-document.querySelector(".apply-main").style.display =
-"block";
-
-document.getElementById("offerBox").style.display =
-"none";
+    document
+    .getElementById("modalImage")
+    .textContent =
+    job.icon;
 
 
-document.getElementById("modal").classList.add("show");
+    document
+    .getElementById("modalTitle")
+    .textContent =
+    job.title;
+
+
+    document
+    .getElementById("modalCompany")
+    .textContent =
+    job.company;
+
+
+    document
+    .getElementById("modalCountry")
+    .textContent =
+    countries[job.country].flag+
+    " "+
+    countries[job.country].name;
+
+
+    document
+    .getElementById("modalCity")
+    .textContent =
+    "📍 "+
+    job.city;
+
+
+    document
+    .getElementById("modalType")
+    .textContent =
+    "⏱️ "+
+    job.type;
+
+
+    document
+    .getElementById("modalCategory")
+    .textContent =
+    "💼 "+
+    job.category;
+
+
+    document
+    .getElementById("modalDescription")
+    .textContent =
+    job.description;
+
+
+    document
+    .getElementById("jobDetails")
+    .style.display =
+    "block";
+
+
+    document
+    .getElementById("offerStep")
+    .style.display =
+    "none";
+
+
+    document
+    .getElementById("modal")
+    .classList
+    .add("show");
 
 }
 
 
 /* =====================================================
-   إظهار خطوة التقديم
+   APPLY
 ===================================================== */
 
 function showOffer(){
 
-document.querySelector(".apply-main").style.display =
-"none";
+    document
+    .getElementById("jobDetails")
+    .style.display =
+    "none";
 
-document.getElementById("offerBox").style.display =
-"block";
+
+    document
+    .getElementById("offerStep")
+    .style.display =
+    "block";
 
 }
 
 
 /* =====================================================
-   OGAds
+   OGADS
 ===================================================== */
 
 function openOGAds(){
 
-/*
-الأفضل استخدام رابط العرض الذي تعطيك
-إياه OGAds مباشرة.
-*/
+    /*
+       الطريقة المفضلة:
 
-if(OGADS_LINK){
+       ضع رابط العرض الذي يعطيك إياه OGAds
+       داخل OGADS_LINK في الأعلى.
 
-window.open(
-OGADS_LINK,
-"_blank",
-"noopener,noreferrer"
-);
+       مثال:
 
-return;
-
-}
+       const OGADS_LINK =
+       "https://example.com/offer";
+    */
 
 
-/*
-إذا كنت تستخدم ID خاصًا بنظامك،
-ضع طريقة بناء الرابط هنا.
+    if(OGADS_LINK){
 
-مثال فقط:
+        window.open(
+            OGADS_LINK,
+            "_blank",
+            "noopener,noreferrer"
+        );
 
-const url =
-"https://example.com/offer?id="+OGADS_ID;
+        return;
 
-ثم استخدم:
-
-window.open(url,"_blank");
-
-*/
-
-if(
-OGADS_ID &&
-OGADS_ID !== "PUT_YOUR_OGADS_ID_HERE"
-){
-
-/*
-ضع كود/رابط OGAds الحقيقي هنا.
-*/
-
-alert(
-"تم إعداد ID الخاص بالعرض: "+
-OGADS_ID+
-"\n\nضع رابط OGAds الحقيقي في متغير OGADS_LINK."
-);
-
-return;
-
-}
+    }
 
 
-/*
-لم يتم وضع الرابط بعد
-*/
+    /*
+       إذا لم تضع الرابط بعد،
+       سيظهر تنبيه بدل إرسال المستخدم
+       إلى رابط غير موجود.
+    */
 
-alert(
-"ضع رابط عرض OGAds الخاص بك داخل OGADS_LINK في أعلى الكود."
-);
+    alert(
+        "لم يتم إضافة رابط OGAds بعد. ضع رابط العرض في OGADS_LINK داخل الكود."
+    );
 
 }
 
 
 /* =====================================================
-   إغلاق النافذة
+   CLOSE MODAL
 ===================================================== */
 
 function closeModal(){
 
-document
-.getElementById("modal")
-.classList.remove("show");
+    document
+    .getElementById("modal")
+    .classList
+    .remove("show");
 
 }
 
@@ -1503,18 +2692,19 @@ document
 "click",
 function(event){
 
-if(event.target === this){
+    if(
+        event.target === this
+    ){
 
-closeModal();
+        closeModal();
 
-}
+    }
 
-}
-);
+});
 
 
 /* =====================================================
-   تشغيل
+   START
 ===================================================== */
 
 showCountries();
